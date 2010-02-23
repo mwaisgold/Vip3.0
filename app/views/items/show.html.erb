@@ -1,0 +1,43 @@
+<p>
+  <b>Site:</b>
+  <%=h @item.site_id %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%=h @item.item_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @item.title %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%=h @item.image %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @item.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @item.price %>
+</p>
+
+<p>
+  <b>Bids count:</b>
+  <%=h @item.bids_count %>
+</p>
+
+<p>
+  <b>Cust:</b>
+  <%=h @item.cust_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
