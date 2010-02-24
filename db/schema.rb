@@ -9,10 +9,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223193714) do
+ActiveRecord::Schema.define(:version => 20100224175657) do
 
   create_table "items", :force => true do |t|
-    t.string   "site_id"
     t.integer  "item_id",     :precision => 38, :scale => 0
     t.string   "title"
     t.string   "image"
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20100223193714) do
     t.integer  "cust_id",     :precision => 38, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "site_id",     :precision => 38, :scale => 0, :null => false
   end
 
   add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
