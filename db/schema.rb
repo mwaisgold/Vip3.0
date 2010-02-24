@@ -11,7 +11,7 @@
 
 ActiveRecord::Schema.define(:version => 20100223193714) do
 
-  create_table "items", :id => false, :force => true do |t|
+  create_table "items", :force => true do |t|
     t.string   "site_id"
     t.integer  "item_id",     :precision => 38, :scale => 0
     t.string   "title"
@@ -24,10 +24,15 @@ ActiveRecord::Schema.define(:version => 20100223193714) do
     t.datetime "updated_at"
   end
 
-  create_table "sites", :primary_key => "site_id", :force => true do |t|
+  add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
+
+  create_table "sites", :force => true do |t|
+    t.string   "site_id",    :limit => 3, :null => false
     t.string   "locale",     :limit => 2, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sites", ["site_id"], :name => "idx_site_unique", :unique => true
 
 end

@@ -3,14 +3,14 @@ require 'spec_helper'
 describe Item do
   before(:each) do
     @valid_attributes = {
-      :site_id => "value for site_id",
-      :item_id => ,
-      :title => "value for title",
-      :image => "value for image",
-      :description => "value for description",
+      :site_id => "MLA",
+      :item_id => 134578,
+      :title => "Titulo de testeo",
+      :image => "",
+      :description => "descripcionnn",
       :price => 9.99,
-      :bids_count => ,
-      :cust_id => 
+      :bids_count => 2,
+      :cust_id => 43565677
     }
   end
 
