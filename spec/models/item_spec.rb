@@ -1,30 +1,33 @@
 require 'spec_helper'
 
 describe Item do
-  before(:each) do
-    @valid_attributes = {
-      :site_id => "MLA",
-      :item_id => 134578,
-      :title => "Titulo de testeo",
-      :image => "",
-      :description => "descripcionnn",
-      :price => 9.99,
-      :bids_count => 2,
-      :cust_id => 43565677
-    }
+
+  fixtures :items
+  
+  it "deberia validar que el customer exista en ML para persistir" do
+    i = items(:one)
+    #seteo un cust_id que no existe en ML
+    i.cust_id = 1
+    i.valid?.should be_false
+    i.errors.on(:cust_id).should_not be_nil
   end
 
-  it "should create a new instance given valid attributes" do
-    Item.create!(@valid_attributes)
+  it "deberia validar que el site_id exista" do
+    i = items(:one)
+    #seteo un site_id que no exista
+    i.site_id = "XXX"
+    i.valid?.should be_false
+    i.errors.on(:site_id).should_not be_nil
   end
+
 end
+
 
 # == Schema Information
 #
 # Table name: items
 #
 #  id          :integer(38)     not null, primary key
-#  site_id     :string(255)
 #  item_id     :integer(38)
 #  title       :string(255)
 #  image       :string(255)
@@ -34,5 +37,6 @@ end
 #  cust_id     :integer(38)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  site_id     :integer(38)     not null
 #
 
