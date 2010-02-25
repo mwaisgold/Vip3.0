@@ -10,7 +10,7 @@ describe Site do
 
   it "NO debe guardar un site sin site_id ni locale" do
     c = Site.new
-    c.save.should be_equal(false)
+    c.save.should be_false
   end
 
 end
