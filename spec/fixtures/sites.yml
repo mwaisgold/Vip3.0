@@ -1,9 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  site_id: MyString
-  locale: MyString
+MLA:
+  site_id: MLA
+  locale: es
 
-two:
-  site_id: MyString
-  locale: MyString
+MLB:
+  site_id: MLB
+  locale: pt
+
+EBY:
+  site_id: EBY
+  locale: en
+
+# == Schema Information
+#
+# Table name: sites
+#
+#  id         :integer(38)     not null, primary key
+#  site_id    :string(3)       not null
+#  locale     :string(2)       not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+
