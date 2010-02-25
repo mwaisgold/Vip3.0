@@ -1,0 +1,556 @@
+Rendering items/show.html.erb
+  [4;36;1mItem Load (2.1ms)[0m   [0;1mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;35;1mItem Load (1.5ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 437565073 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mSite Columns (0.8ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'SITES'
+ order by column_id
+[0m
+  [4;35;1mSite Load (1.4ms)[0m   [0mSELECT * FROM sites WHERE (sites.id = 437565073) [0m
+  [4;36;1mItem Load (1.2ms)[0m   [0;1mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;35;1mItem Load (0.5ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 0 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM sites WHERE (sites.id = 0) [0m
+  [4;36;1mItem Columns (1.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'ITEMS'
+ order by column_id
+[0m
+Rendering items/show.html.erb
+  [4;36;1mItem Columns (1.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'ITEMS'
+ order by column_id
+[0m
+Rendering items/show.html.erb
+
+
+Processing SitesController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/sites
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/sites/37]
+
+
+Processing SitesController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"37", "site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37?site%5Bthese%5D=params]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"37", "site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37?site%5Bthese%5D=params]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites/1007
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites/1008
+Completed in 59ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites?site%5Bthese%5D=params]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"site"=>{}}
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites?]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"site"=>{"these"=>"params"}}
+Redirected to http://test.host/sites/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites?site%5Bthese%5D=params]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"site"=>{}}
+Redirected to http://test.host/sites/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites?]
+
+
+Processing SitesController#edit (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37/edit]
+
+
+Processing SitesController#new (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/new]
+
+
+Processing SitesController#show (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/sites
+Rendering sites/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37]
+
+
+Processing SitesController#index (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+Rendering template within layouts/sites
+Rendering sites/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites]
+  [4;36;1mSite Columns (1.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'SITES'
+ order by column_id
+[0m
+Rendering sites/new.html.erb
+Rendering sites/show.html.erb
+Rendering sites/edit.html.erb
+Rendering sites/index.html.erb
+
+
+Processing ItemsController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/items
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/items/37]
+
+
+Processing ItemsController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"37", "item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37?item%5Bthese%5D=params]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"37", "item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37?item%5Bthese%5D=params]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items/1028
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:20) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items/1029
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items?item%5Bthese%5D=params]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"item"=>{}}
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items?]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"item"=>{"these"=>"params"}}
+Redirected to http://test.host/items/1032
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items?item%5Bthese%5D=params]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:20) [POST]
+  Parameters: {"item"=>{}}
+Redirected to http://test.host/items/1033
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items?]
+
+
+Processing ItemsController#edit (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37/edit]
+
+
+Processing ItemsController#new (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/new]
+
+
+Processing ItemsController#show (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/items
+Rendering items/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37]
+
+
+Processing ItemsController#index (for 0.0.0.0 at 2010-02-25 14:08:20) [GET]
+Rendering template within layouts/items
+Rendering items/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items]
+
+
+Processing SitesController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/sites
+Completed in 4ms (DB: 0) | 302 Found [http://test.host/sites/37]
+
+
+Processing SitesController#destroy (for 0.0.0.0 at 2010-02-25 14:08:20) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"37", "site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37?site%5Bthese%5D=params]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"37", "site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37?site%5Bthese%5D=params]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites/1007
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/sites/1008
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites/1]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"site"=>{"these"=>"params"}}
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites?site%5Bthese%5D=params]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"site"=>{}}
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites?]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"site"=>{"these"=>"params"}}
+Redirected to http://test.host/sites/1011
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites?site%5Bthese%5D=params]
+
+
+Processing SitesController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"site"=>{}}
+Redirected to http://test.host/sites/1012
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/sites?]
+
+
+Processing SitesController#edit (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/sites
+Rendering sites/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37/edit]
+
+
+Processing SitesController#new (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+Rendering template within layouts/sites
+Rendering sites/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/new]
+
+
+Processing SitesController#show (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/sites
+Rendering sites/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites/37]
+
+
+Processing SitesController#index (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+Rendering template within layouts/sites
+Rendering sites/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/sites]
+  [4;36;1mSite Columns (1.3ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'SITES'
+ order by column_id
+[0m
+Rendering sites/new.html.erb
+Rendering sites/show.html.erb
+Rendering sites/edit.html.erb
+Rendering sites/index.html.erb
+
+
+Processing ItemsController#destroy (for 0.0.0.0 at 2010-02-25 14:08:21) [DELETE]
+  Parameters: {"id"=>"37"}
+Redirected to http://test.host/items
+Completed in 3ms (DB: 0) | 302 Found [http://test.host/items/37]
+
+
+Processing ItemsController#destroy (for 0.0.0.0 at 2010-02-25 14:08:21) [DELETE]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"37", "item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37?item%5Bthese%5D=params]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"37", "item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37?item%5Bthese%5D=params]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items/1028
+Completed in 2ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#update (for 0.0.0.0 at 2010-02-25 14:08:21) [PUT]
+  Parameters: {"id"=>"1"}
+Redirected to http://test.host/items/1029
+Completed in 46ms (DB: 0) | 302 Found [http://test.host/items/1]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"item"=>{"these"=>"params"}}
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items?item%5Bthese%5D=params]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"item"=>{}}
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items?]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"item"=>{"these"=>"params"}}
+Redirected to http://test.host/items/1032
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items?item%5Bthese%5D=params]
+
+
+Processing ItemsController#create (for 0.0.0.0 at 2010-02-25 14:08:21) [POST]
+  Parameters: {"item"=>{}}
+Redirected to http://test.host/items/1033
+Completed in 1ms (DB: 0) | 302 Found [http://test.host/items?]
+
+
+Processing ItemsController#edit (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/items
+Rendering items/edit
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37/edit]
+
+
+Processing ItemsController#new (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+Rendering template within layouts/items
+Rendering items/new
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/new]
+
+
+Processing ItemsController#show (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+  Parameters: {"id"=>"37"}
+Rendering template within layouts/items
+Rendering items/show
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items/37]
+
+
+Processing ItemsController#index (for 0.0.0.0 at 2010-02-25 14:08:21) [GET]
+Rendering template within layouts/items
+Rendering items/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/items]
+  [4;35;1mSite Load (2.6ms)[0m   [0mSELECT * FROM sites WHERE (sites.id = 434655983) [0m
+  [4;36;1mSite Load (1.4ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT sites.id FROM sites WHERE (sites.site_id = 'EBY' AND sites.id <> 434655983) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mSite Load (1.9ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT sites.id FROM sites WHERE (sites.site_id IS NULL) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mItem Columns (0.9ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'ITEMS'
+ order by column_id
+[0m
+  [4;35;1mSite Load (979.5ms)[0m   [0mSELECT * FROM sites WHERE (sites.id = 434655983) [0m
+  [4;36;1mSite Load (0.5ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT sites.id FROM sites WHERE (sites.site_id = 'EBY' AND sites.id <> 434655983) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mSite Load (0.4ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT sites.id FROM sites WHERE (sites.site_id IS NULL) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mItem Columns (0.8ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'ITEMS'
+ order by column_id
+[0m
+Rendering items/show.html.erb
+Rendering items/show.html.erb
+  [4;35;1mItem Load (2.1ms)[0m   [0mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;36;1mItem Load (1.3ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 437565073 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mSite Load (0.7ms)[0m   [0mSELECT * FROM sites WHERE (sites.id = 437565073) [0m
+  [4;35;1mItem Load (1.3ms)[0m   [0mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;36;1mItem Load (0.5ms)[0m   [0;1mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 437565073 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;35;1mSite Load (0.8ms)[0m   [0mSELECT * FROM sites WHERE (sites.id = 437565073) [0m
+  [4;36;1mItem Load (1.2ms)[0m   [0;1mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;35;1mItem Load (0.4ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 0 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM sites WHERE (sites.id = 0) [0m
+  [4;36;1mItem Load (1.9ms)[0m   [0;1mSELECT * FROM items WHERE (items.id = 980190962) [0m
+  [4;35;1mItem Load (0.5ms)[0m   [0mselect * from (select raw_sql_.*, rownum raw_rnum_ from (SELECT items.id FROM items WHERE (items.item_id = 1 AND items.site_id = 0 AND items.id <> 980190962) ) raw_sql_ where rownum <= 1) where raw_rnum_ > 0[0m
+  [4;36;1mSite Load (0.7ms)[0m   [0;1mSELECT * FROM sites WHERE (sites.id = 0) [0m
+Rendering items/new.html.erb
+Rendering items/index.html.erb
+Rendering items/new.html.erb
+Rendering items/edit.html.erb
+Rendering items/index.html.erb
+Rendering items/edit.html.erb
+  [4;36;1mItem Columns (1.2ms)[0m   [0;1m select column_name as name, data_type as sql_type, data_default, nullable,
+ decode(data_type, 'NUMBER', data_precision,
+ 'FLOAT', data_precision,
+ 'VARCHAR2', data_length,
+ 'CHAR', data_length,
+ null) as limit,
+ decode(data_type, 'NUMBER', data_scale, null) as scale
+ from all_tab_columns
+ where owner = 'RUBY_TEST'
+ and table_name = 'ITEMS'
+ order by column_id
+[0m
+Rendering items/index.html.erb

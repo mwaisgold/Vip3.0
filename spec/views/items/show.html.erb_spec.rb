@@ -4,26 +4,21 @@ describe "/items/show.html.erb" do
   include ItemsHelper
   before(:each) do
     assigns[:item] = @item = stub_model(Item,
-      :site_id => "value for site_id",
-      :item_id => ,
-      :title => "value for title",
-      :image => "value for image",
-      :description => "value for description",
+      :site_id => "MLA",
+      :item_id => 123123,
+      :title => "Titulo de testeo",
+      :image => "drlfldm",
+      :description => "Descripcion",
       :price => 9.99,
-      :bids_count => ,
-      :cust_id => 
+      :bids_count => 223,
+      :cust_id => 94798703
     )
+
+    assigns[:customer] = @customer = @item.get_customer 
   end
 
-  it "renders attributes in <p>" do
+  it "Se fija si el title del html tiene el titulo del articulo" do
     render
-    response.should have_text(/value\ for\ site_id/)
-    response.should have_text(//)
-    response.should have_text(/value\ for\ title/)
-    response.should have_text(/value\ for\ image/)
-    response.should have_text(/value\ for\ description/)
-    response.should have_text(/9\.99/)
-    response.should have_text(//)
-    response.should have_text(//)
+    response.should have_tag('title',/Titulo de testeo/)
   end
 end

@@ -7,13 +7,13 @@ describe "/items/new.html.erb" do
     assigns[:item] = stub_model(Item,
       :new_record? => true,
       :site_id => "value for site_id",
-      :item_id => ,
+      :item_id => 1,
       :title => "value for title",
       :image => "value for image",
       :description => "value for description",
       :price => 9.99,
-      :bids_count => ,
-      :cust_id => 
+      :bids_count =>1 ,
+      :cust_id => 1
     )
   end
 

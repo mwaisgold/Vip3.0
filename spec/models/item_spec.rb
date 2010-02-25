@@ -3,7 +3,14 @@ require 'spec_helper'
 describe Item do
 
   fixtures :items
-  
+ 
+  it "deberia no insertar item con cust en nulo"
+
+  it "aasdfasd"
+
+  it "asdfnasdfsa"
+
+ 
   it "deberia validar que el customer exista en ML para persistir" do
     i = items(:one)
     #seteo un cust_id que no existe en ML
