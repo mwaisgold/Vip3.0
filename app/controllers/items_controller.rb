@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  layout "vip", :only => :show
+  
   # GET /items
   # GET /items.xml
   def index
@@ -14,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
+    @customer = @item.get_customer
 
     respond_to do |format|
       format.html # show.html.erb
