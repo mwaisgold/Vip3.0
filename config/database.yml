@@ -19,7 +19,8 @@
 
 development:
   adapter: oracle
-  database: 127.0.0.1
+#  database: 127.0.0.1
+  database: domU-12-31-39-00-A8-12.compute-1.internal/XE
   username: ruby
   password: ruby
 

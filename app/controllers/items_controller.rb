@@ -1,3 +1,5 @@
+require 'xml-object'
+
 class ItemsController < ApplicationController
   layout "vip", :only => :show
   
@@ -16,7 +18,9 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-    @customer = @item.get_customer
+    @customer = XMLObject.new cache('customer' + @item.cust_id.to_s){
+      @item.get_customer.raw_xml.to_s
+    }
 
     respond_to do |format|
       format.html # show.html.erb

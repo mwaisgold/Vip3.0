@@ -9,8 +9,17 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   before_filter :set_locale
 
+
   def set_locale
     I18n.locale = params[:locale]
   end
+
+    def cache(key)
+      unless output = Rails.cache.read(key)
+        output = yield
+        Rails.cache.write(key, output)
+      end
+      return output
+    end
 
 end

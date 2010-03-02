@@ -24,15 +24,15 @@ class Item < ActiveRecord::Base
     if @customer != nil && @customer.custID == self.cust_id
       return @customer
     else
-      begin
-        cust = CustomerResource.new.get self.cust_id
-        #Agrego el pedido de esto. Si no lo trae quiere decir que no existia el cust
-        cust.nickname
-        @customer = cust
-        return @customer
-      rescue NameError
-        nil
-      end
+        begin
+          cust = CustomerResource.new.get self.cust_id
+          #Agrego el pedido de esto. Si no lo trae quiere decir que no existia el cust
+          cust.nickname
+          @customer = cust
+          return @customer
+        rescue NameError
+          nil
+        end
     end
   end
 
