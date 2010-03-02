@@ -107,7 +107,7 @@ function moveToTope(){window.scroll(0,0);}
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
 <td width="16%" height="25"><%=t :precio %>:</td>
-<td width="84%" valign="middle"><span class="price">$ 798<span class="decimales">99</span></span></td>
+<td width="84%" valign="middle"><span class="price">$ <%= @item.price %><span class="decimales">99</span></span></td>
 </tr>
 <tr>
 </tr>
@@ -165,7 +165,7 @@ function moveToTope(){window.scroll(0,0);}
 </div></div>
 <br>
 <div style="clear: both;">
-<%=t :ventas %>: 18 <a href=""></a>
+<%=t :ventas %>: <%= @item.bids_count %> <a href=""></a>
 </div>
 <br />
 </span></td>
@@ -243,9 +243,6 @@ function moveToTope(){window.scroll(0,0);}
 </div>
 
 </div> 
- 
-<!-- ##FOOTER## -->
 
-<!-- ##FOOTER## -->
 </div>
 </center>
