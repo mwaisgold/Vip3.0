@@ -14,8 +14,8 @@ gem 'ci_reporter'
 gem 'metric_fu'
 require 'ci/reporter/rake/rspec' # use this if you're using RSpec
 
-begin
-  require 'metric_fu'
-rescue LoadError
-  puts "Metric-Fu not available."
-end
+#begin
+#  require 'metric_fu'
+#rescue LoadError
+#  puts "Metric-Fu not available."
+#end
