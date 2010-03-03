@@ -7,18 +7,25 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   before_filter :set_locale
-
+  after_filter :set_charset
 
   def set_locale
     I18n.locale = params[:locale]
   end
 
-    def cache(key)
-      unless output = Rails.cache.read(key)
-        output = yield
-        Rails.cache.write(key, output)
-      end
-      return output
+  def cache(key)
+    unless output = Rails.cache.read(key)
+      output = yield
+      Rails.cache.write(key, output)
     end
+    return output
+  end
+
+  def set_charset
+    content_type = headers["Content-Type"] || 'text/html'
+    if /^text\//.match(content_type)
+      headers["Content-Type"] = "#{content_type}; charset=ISO-8859-1"
+    end
+  end
 
 end
