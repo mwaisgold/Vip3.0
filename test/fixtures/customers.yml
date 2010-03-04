@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nickname: MyString
+  points: 1
+  qty_calif: 1
+
+two:
+  nickname: MyString
+  points: 1
+  qty_calif: 1

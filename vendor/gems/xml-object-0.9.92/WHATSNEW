@@ -1,0 +1,108 @@
+* 0.9.92 (2009-10-29):
+  - Tested under 1.9.1, 1.8.7, 1.8.6, and JRuby 1.4.0RC3
+  - [API CHANGE!] No longer requires rubygems (ooops)
+  - [API CHANGE!] No longer attempts to require 'activesupport', you must
+    do it yourself to use inflections and such.
+  - [API CHANGE!] Removed 'jordi-xml-object' since Github gem serving is
+    going away, you must require 'xml-object' now.
+  - Added VERSION constant
+  - Changing gemspec to take advantage Gemcutter workflow
+  - Better global namespace hygiene
+  - Back to using Test::Unit (ze tools, ze tools, le sigh)
+
+* 0.9.91 (2009-06-23):
+  - Fixes a bug where consecutive collection proxies confused XMLObject
+    mid-parsing (Thanks to Josef Spillner)
+  - Dropped the Hpricot support. Not worth it, API changes too often, and
+    libxml-ruby now rocks more than ever.
+
+* 0.9.9 (2008-12-18):
+  - Bugfix for the new faster-than-nokogiri Hpricot version (broke the API)
+
+* 0.9.8 (2008-10-23):
+  - Much improved test suite. More granular, better coverage, much faster
+  - The collection proxy behaviour is now a lot faster when called in a loop
+  - Collection Proxies are a lot more transparent
+  - Reduced memory footprint of instantiated XMLObject trees
+  - Calling elements, attributes, question methods or pluralized collections
+    (anything, really) that's not there raises NameError instead of just
+    returning nil
+  - Removed #rb (wasn't really all that useful)
+  - The [:sym => 'foo'] notation now only supports :attr and :elem
+  - The question method notation is a bit more strict
+  - JREXML adapter removed. It barely sped up REXML under JRuby
+
+* 0.9.7 (2008-10-20):
+  - LibXML adapter added
+  - JREXML "adapter" added, as well as JREXML support during tests and
+    benchmark tasks, but only when running under JRuby
+  - Backwards incompatible change: Elements with no text and multiple CDATA
+    values no longer report their value as their first CDATA element. They
+    report all of their CDATA nodes joined together, a-la LibXML
+
+* 0.9.6 (2008-10-19):
+  - Ruby 1.9 compatibility
+  - XMLObject no longer requires ActiveSupport. Note that proper array
+    pluralization still depends on ActiveSupport's Inflector, so if it's not
+    there, we just pluralize things by tacking 's' at the end.
+  - XMLObject no longer tries to load Hpricot by default (too cumbersome
+    to test). Use "require 'xml-object/adapters/hpricot'" to enable the
+    Hpricot adapter.
+  - Backwards incompatible change. For the following XML:
+
+      <foo>
+        <bar>
+        <bez>
+      </foo>
+
+      <foos>Yipes!</foos>
+
+    before:
+
+      xml.foos => # The <foo> "array"
+
+    now:
+
+      xml.foos => # The <foos> element
+
+    It proved too expensive to support that edge case, and for no good
+    reason.
+
+* 0.9.5 (2008-10-15):
+  - Project renamed to XMLObject, to match project name at Rubyforge.
+    The other names were taken. :(
+
+* 0.9.0 (2008-10-15):
+  - Added support for plug-able adapters
+  - Backported REXML code as an adapter, added Hpricot adapter
+  - Performance: XMLStruct now decorates objects lazily
+  - Performance: XMLStruct uses the Hpricot adapter if possible, otherwise
+    REXML as a fallback
+  - API Change: XMLStruct.new is mostly delegated to the adapter, and both
+    included adapters behave the same: a String is considered to be
+    XML data, anything else is probed for #read and then #to_s
+
+* 0.2.1 (2008-10-13):
+  - Fixed a bug where attributes with dashes would crash the party
+
+* 0.2.0 (2008-10-13):
+  - Broke backwards compatibility
+  - XMLStruct.new now returns decorated String or Array objects, so that
+    access to elements, attributes, and "collection" values is consistent
+  - While Strings are no longer auto-typecast to float or int, they now
+    have, whenever possible, a question-mark form, which attemps to
+    returns booleans for strings like "Yes" and "false"
+  - XMLStruct.new can now take a filename or a file object
+  - Added more tests
+
+* 0.1.3 (2008-10-10):
+  - Switched tests to use test/spec
+  - Added XMLStruct#to_obj to return the corresponding Ruby object value
+  - Added XMLStruct#to_raw_xml to return the REXML object
+  - Added documentation on auto-typecasting behaviour caveat
+
+* 0.1.2 (2008-10-10):
+  - Documentation
+
+* 0.1.1 (2008-10-10):
+  - First "release" ;)

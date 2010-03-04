@@ -18,9 +18,10 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-    @customer = XMLObject.new cache('customer' + @item.cust_id.to_s){
-      @item.get_customer.raw_xml.to_s
-    }
+#    @customer = XMLObject.new cache('customer' + @item.cust_id.to_s){
+#      @item.get_customer.raw_xml.to_s
+#    }
+	@customer = @item.customer
 
     respond_to do |format|
       format.html # show.html.erb

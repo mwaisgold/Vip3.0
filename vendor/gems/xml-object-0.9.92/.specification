@@ -1,0 +1,82 @@
+--- !ruby/object:Gem::Specification 
+name: xml-object
+version: !ruby/object:Gem::Version 
+  prerelease: false
+  segments: 
+  - 0
+  - 9
+  - 92
+  version: 0.9.92
+platform: ruby
+authors: 
+- Jordi Bunster
+autorequire: 
+bindir: bin
+cert_chain: []
+
+date: 2009-10-30 00:00:00 -04:00
+default_executable: 
+dependencies: []
+
+description: XMLObject is a library for reading (not writing) XML. It is particularly suited for cases where one is dealing with small documents of a known structure. While not devoid of caveats, it does have a very pleasant, idiomatic Ruby syntax.
+email: jordi@bunster.org
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- README.rdoc
+- MIT-LICENSE
+- WHATSNEW
+files: 
+- MIT-LICENSE
+- README.rdoc
+- TODO
+- WHATSNEW
+- lib/xml-object/version.rb
+- lib/xml-object/adapters/libxml.rb
+- lib/xml-object/adapters/rexml.rb
+- lib/xml-object/adapters.rb
+- lib/xml-object/collection_proxy.rb
+- lib/xml-object/element.rb
+- lib/xml-object/properties.rb
+- lib/xml-object.rb
+- xml-object.gemspec
+has_rdoc: true
+homepage: 
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --title
+- XMLObject
+- --main
+- README.rdoc
+- --inline-source
+require_paths: 
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 1
+      - 8
+      - 6
+      version: 1.8.6
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      segments: 
+      - 0
+      version: "0"
+requirements: []
+
+rubyforge_project: 
+rubygems_version: 1.3.6
+signing_key: 
+specification_version: 3
+summary: The Rubyista's way to do quick XML sit-ups
+test_files: []
+

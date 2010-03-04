@@ -149,16 +149,16 @@ function moveToTope(){window.scroll(0,0);}
 <div id="posneg"> 
     <div id="caja_pos"> 
     	<span id="link_pos">
-          <% if Integer(@customer.qtyCalif) > 0 then %>
-          (<%= Integer(@customer.points) * 100 / Integer(@customer.qtyCalif) %>%
+          <% if Integer(@customer.qty_calif) > 0 then %>
+          (<%= Integer(@customer.points) * 100 / Integer(@customer.qty_calif) %>%
           <% end %>
         </span> 
 		<span id="img_pos" class="pos"></span>)
     </div>
     <div id="caja_neg"> 
 	<span id="link_neg">
-        <% if Integer(@customer.qtyCalif) > 0 then %>  
-        (<%= 100 - Integer(@customer.points) * 100 / Integer(@customer.qtyCalif) %>%</span> 
+        <% if Integer(@customer.qty_calif) > 0 then %>  
+        (<%= 100 - Integer(@customer.points) * 100 / Integer(@customer.qty_calif) %>%</span> 
 	<% end %>
         <span id="img_neg" class="neg"/></span>)
 	</div> 
