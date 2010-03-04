@@ -190,10 +190,10 @@ function moveToTope(){window.scroll(0,0);}
 
 <br/> <br/>
 <div id="boxgral">
-	<span class="tith2">Preferencias de pago y envío</span>
+	<span class="tith2"><%=t :preferencia_pago %></span>
 
 	<div style="margin-left: 10px;">
-	<div class="titles2">Pago</div>
+	<div class="titles2"><%=t :texto_pago %></div>
 		<% for paymentMethod in @paymentMethods %>
 			<div style="margin-left: 10px;">- <%= paymentMethod.name %>  <img src="<%= paymentMethod.logo %>"></div>
 		<% end %>
@@ -205,16 +205,16 @@ function moveToTope(){window.scroll(0,0);}
 	  </div> 
 	<div class="mediosBox"><img src="/org-img/vip3/mcard/mcards_mla.gif"><img src="/org-img/vip3/mcard/med_ar_296x23.gif">
 
-	<div style="margin: 5px 0pt; color: rgb(18, 121, 40); font-size: 11px;">Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia.</div>
+	<div style="margin: 5px 0pt; color: rgb(18, 121, 40); font-size: 11px;"><%=t :texto_cuotas %>.</div>
 
-		<div style="margin-top: 8px;"><img src="http://www.mercadolibre.com/org-img/vip3/ep/ppc17x17.gif" align="absmiddle" height="17" width="17"> <a target="_blank" href="http://www.mercadopago.com/argentina/ml/p_loadhtml?as_menu=M06S03&amp;as_html_code=PROTECCION_COMP02"> Tu compra está protegida</a> hasta $6.000<span class="decimales">00</span></div> 
+		<div style="margin-top: 8px;"><img src="http://www.mercadolibre.com/org-img/vip3/ep/ppc17x17.gif" align="absmiddle" height="17" width="17"> <a target="_blank" href="http://www.mercadopago.com/argentina/ml/p_loadhtml?as_menu=M06S03&amp;as_html_code=PROTECCION_COMP02"> <%=t :tucompra %></a> <%=t :hasta, :valor => 6000 %> <span class="decimales">00</span></div> 
 	  </div> 
 	</div>
 	</td></tr></tbody></table></div>
 	<br>
 	<div class="dashedgreyline"></div>
 
-	<div class="titles2">Envío</div>
+	<div class="titles2"><%=t :texto_envio %></div>
 		<% for shipMethod in @shipMethods %>
 			<div style="margin-left: 10px;">- <%= shipMethod.description %></div>
 		<% end %>
@@ -247,7 +247,7 @@ function moveToTope(){window.scroll(0,0);}
 	<div class="wrap2"><a name="toQuest">        <div class="side"><b>Pregunta:</b><br>       </div>     
 	<div class="bloque"><%= question.question %></div>   </a>
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')">Denunciar</a></div></div>        
-	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
+	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%= question.question_dt%></span></div>     
 	<div class="bloque"><%= question.answer %></div>     
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')">Denunciar</a></div>   </div> 
 	<% end %>

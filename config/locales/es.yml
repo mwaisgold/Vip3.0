@@ -32,6 +32,11 @@ es:
   repdominicana: "Rep. Dominicana"
   uruguay: "Uruguay"
   venezuela: "Venezuela"
+  preferencia_pago: "Preferencias de pago y envío"
+  texto_pago: "Pago"
+  texto_envio: "Envío"
+  texto_cuotas: "Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia"
+  hasta: hasta ${{valor}}
 
   app:
     render_time: (%1.2f seg)
