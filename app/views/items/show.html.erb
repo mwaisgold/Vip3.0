@@ -233,7 +233,7 @@ function moveToTope(){window.scroll(0,0);}
 		<li group="Community" class="TabbedPanelsTab" id="current">
 			<a href="javascript:showTab('Preguntasalvendedor','CommunityCont');cambiarEstilos('HPreguntasalvendedor',1,'Community')"><span><%=t 'questions.questions_to_seller' %></span></a>
 		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
-			<a href="javascript:showTab('Calificacionesdecompradores','CommunityCont');cambiarEstilos('HCalificacionesdecompradores',1,'Community')"><span>Calificaciones de compradores</span></a>
+			<a href="javascript:showTab('Calificacionesdecompradores','CommunityCont');cambiarEstilos('HCalificacionesdecompradores',1,'Community')"><span><%=t 'questions.buyer_rating'%></span></a>
 		</li>
 	</ul>
 </div>
@@ -244,12 +244,12 @@ function moveToTope(){window.scroll(0,0);}
   <div style="text-align:right; width:99%"></div> 
   <% for question in @questions %>
 	</a><div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
-	<div class="wrap2"><a name="toQuest">        <div class="side"><b>Pregunta:</b><br>       </div>     
+	<div class="wrap2"><a name="toQuest">        <div class="side"><b><%=t 'questions.question' %></b><br>       </div>     
 	<div class="bloque"><%= question.question %></div>   </a>
-	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')">Denunciar</a></div></div>        
-	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')"><%=t 'questions.denounce' %></a></div></div>        
+	<div class="wrap3">     <div class="side"><b><%=t 'questions.answer' %></b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
 	<div class="bloque"><%= question.answer %></div>     
-	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')">Denunciar</a></div>   </div> 
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')"><%=t 'questions.denounce' %></a></div>   </div> 
 	</div>
 	<% end %>
 	
@@ -258,7 +258,7 @@ function moveToTope(){window.scroll(0,0);}
  <div class="askq-button"> 
   <table width="250" border="0" align="center"> 
     <tr> 
-      <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="Hacer una pregunta al vendedor" title="Hacer una pregunta al vendedor" onclick="javascript:makeQues()" /></div></td> 
+      <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="<%=t 'questions.ask_a_seller' %>" title="<%=t 'questions.ask_a_seller' %>" onclick="javascript:makeQues()" /></div></td> 
     </tr> 
   </table> 
 </div>  
