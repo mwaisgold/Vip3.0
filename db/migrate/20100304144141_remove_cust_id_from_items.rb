@@ -5,6 +5,6 @@ class RemoveCustIdFromItems < ActiveRecord::Migration
   end
 
   def self.down
-    add_column :items, :cust_id
+    add_column :items, :cust_id, :integer
   end
 end

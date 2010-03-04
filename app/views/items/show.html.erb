@@ -187,7 +187,46 @@ function moveToTope(){window.scroll(0,0);}
 <div id="descriptionCont">
 	<div class="contentbox" id="Descripción"><%= @item.description %><!----></div>
 </div>
+
+<br/> <br/>
+<!-- preguntas -->
+
+<div id="tabsN">
+	<ul id="Community">
+		<li group="Community" class="TabbedPanelsTab" id="current">
+			<a href="javascript:showTab('Preguntasalvendedor','CommunityCont');cambiarEstilos('HPreguntasalvendedor',1,'Community')"><span>Preguntas al vendedor</span></a>
+		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
+			<a href="javascript:showTab('Calificacionesdecompradores','CommunityCont');cambiarEstilos('HCalificacionesdecompradores',1,'Community')"><span>Calificaciones de compradores</span></a>
+		</li>
+	</ul>
 </div>
+
+
+
+<div id="Preguntasalvendedor" class="contentbox">  <a name="toQuest">
+  <div style="text-align:right; width:99%"></div> 
+  <% for question in @questions %>
+	</a><div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
+	<div class="wrap2"><a name="toQuest">        <div class="side"><b>Pregunta:</b><br>       </div>     
+	<div class="bloque"><%= question.question %></div>   </a>
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')">Denunciar</a></div></div>        
+	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%= question.question_dt%></span></div>     
+	<div class="bloque"><%= question.answer %></div>     
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')">Denunciar</a></div>   </div> 
+	<% end %>
+	</div>
+
+
+ <div class="askq-button"> 
+  <table width="250" border="0" align="center"> 
+    <tr> 
+      <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="Hacer una pregunta al vendedor" title="Hacer una pregunta al vendedor" onclick="javascript:makeQues()" /></div></td> 
+    </tr> 
+  </table> 
+</div>  
+
+</div>
+
 <!--   -->
     <div name="attr_help" class="LayerAyuda"><div  id='MLID' class="caja_ayu_gral" onMouseOut="javascript:delayHide();" onMouseOver="javascript:deleteDelayHide();">
 	<div class="caja_ayu_flecha"></div>
@@ -246,3 +285,6 @@ function moveToTope(){window.scroll(0,0);}
 
 </div>
 </center>
+
+
+

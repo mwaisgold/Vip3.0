@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20100304144141) do
   add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
 
   create_table "questions", :force => true do |t|
+    t.integer  "item_id",     :precision => 38, :scale => 0
     t.text     "question"
     t.datetime "question_dt"
     t.text     "answer"

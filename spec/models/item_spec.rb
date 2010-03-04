@@ -30,6 +30,7 @@ describe Item do
 end
 
 
+
 # == Schema Information
 #
 # Table name: items
@@ -41,9 +42,9 @@ end
 #  description :text
 #  price       :integer(38)
 #  bids_count  :integer(38)
-#  cust_id     :integer(38)
 #  created_at  :datetime
 #  updated_at  :datetime
 #  site_id     :integer(38)     not null
+#  customer_id :integer(38)
 #
 

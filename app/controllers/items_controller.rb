@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 #      @item.get_customer.raw_xml.to_s
 #    }
 	@customer = @item.customer
+	@questions = @item.questions
 
     respond_to do |format|
       format.html # show.html.erb
