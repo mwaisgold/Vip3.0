@@ -1,0 +1,9 @@
+Para Bamboo:
+- Reportes RSpec a XML como Junit, para mostrarlos en Bamboo
+	Se requiere instalar una gem y un plugin
+		server: gem install ci_reporter
+		Project: script/plugin install http://svn.caldersphere.net/svn/main/plugins/ci_reporter
+- Analisis de Covertura de Tests Vs Code 
+	Server: gem install rcov
+	Project: ./script/plugin install http://svn.codahale.com/rails_rcov
+
