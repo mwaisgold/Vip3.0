@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :site
+  belongs_to :customer
   #Valido los campos que no pueden ser nulos
   validates_presence_of :site_id, :item_id, :title, :cust_id, :price, :bids_count
   #Valido la numericalidad del precio

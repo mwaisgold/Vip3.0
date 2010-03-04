@@ -1,0 +1,7 @@
+* Refactor so as to not do things recursively
+* Implement #inspect, #pp
+* Decide if NameError is indeed better than nil?
+* Decide if Element text should be stripped
+* See if namespaces are a possibility.
+* Figure out a way to fix the 'xmlns' problem in LibXML, remove entry from
+  caveats in README.rdoc

@@ -10,9 +10,9 @@ require 'rake/rdoctask'
 require 'tasks/rails'
 
 require 'rubygems'
-gem 'ci_reporter'
-gem 'metric_fu'
-require 'ci/reporter/rake/rspec' # use this if you're using RSpec
+#gem 'ci_reporter'
+#gem 'metric_fu'
+#require 'ci/reporter/rake/rspec' # use this if you're using RSpec
 
 #begin
 #  require 'metric_fu'

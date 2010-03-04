@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224175657) do
+ActiveRecord::Schema.define(:version => 20100304141926) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "nickname",   :limit => 20
+    t.integer  "points",                   :precision => 38, :scale => 0
+    t.integer  "qty_calif",                :precision => 38, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "customers", ["nickname"], :name => "idx_cust_nickname", :unique => true
 
   create_table "items", :force => true do |t|
     t.integer  "item_id",     :precision => 38, :scale => 0
@@ -22,9 +32,20 @@ ActiveRecord::Schema.define(:version => 20100224175657) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id",     :precision => 38, :scale => 0, :null => false
+    t.integer  "customer_id", :precision => 38, :scale => 0
   end
 
+  add_index "items", ["customer_id"], :name => "idx_items_customer"
   add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
+
+  create_table "questions", :force => true do |t|
+    t.text     "question"
+    t.datetime "question_dt"
+    t.text     "answer"
+    t.datetime "answer_dt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "sites", :force => true do |t|
     t.string   "site_id",    :limit => 3, :null => false

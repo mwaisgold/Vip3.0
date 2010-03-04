@@ -1,0 +1,18 @@
+<p>
+  <b>Nickname:</b>
+  <%=h @customer.nickname %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @customer.points %>
+</p>
+
+<p>
+  <b>Qty calif:</b>
+  <%=h @customer.qty_calif %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
