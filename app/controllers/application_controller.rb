@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   before_filter :take_stamp
   after_filter  :set_charset
+  after_filter  :set_get_time_header
   def take_stamp
     @stamp = Time.new
   end
@@ -29,7 +30,12 @@ class ApplicationController < ActionController::Base
     content_type = headers["Content-Type"] || 'text/html'
     if /^text\//.match(content_type)
       headers["Content-Type"] = "#{content_type}; charset=ISO-8859-1"
-    end
+    end	
+  end
+  
+  def set_get_time_header
+	#Agrego el header del tiempo
+	headers["gen-time"] = ((Time.now - @stamp) * 1000).to_i.to_s
   end
 
 end
