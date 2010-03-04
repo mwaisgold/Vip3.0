@@ -34,4 +34,9 @@ es:
   venezuela: "Venezuela"
 
   app:
-    render_time: (%1.2f seg)
+    render_time: %0.0f ms
+
+  date:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%b %d"

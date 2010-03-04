@@ -231,7 +231,7 @@ function moveToTope(){window.scroll(0,0);}
 <div id="tabsN">
 	<ul id="Community">
 		<li group="Community" class="TabbedPanelsTab" id="current">
-			<a href="javascript:showTab('Preguntasalvendedor','CommunityCont');cambiarEstilos('HPreguntasalvendedor',1,'Community')"><span>Preguntas al vendedor</span></a>
+			<a href="javascript:showTab('Preguntasalvendedor','CommunityCont');cambiarEstilos('HPreguntasalvendedor',1,'Community')"><span><%=t 'questions.questions_to_seller' %></span></a>
 		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
 			<a href="javascript:showTab('Calificacionesdecompradores','CommunityCont');cambiarEstilos('HCalificacionesdecompradores',1,'Community')"><span>Calificaciones de compradores</span></a>
 		</li>
@@ -250,8 +250,9 @@ function moveToTope(){window.scroll(0,0);}
 	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
 	<div class="bloque"><%= question.answer %></div>     
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')">Denunciar</a></div>   </div> 
-	<% end %>
 	</div>
+	<% end %>
+	
 
 
  <div class="askq-button"> 

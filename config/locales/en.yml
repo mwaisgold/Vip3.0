@@ -44,3 +44,6 @@ en:
     formats:
       default: "%dd-%mm-%YYYY"
       short: "%b %d"
+
+  questions:
+    questions_to_seller: "Questions to seller"
