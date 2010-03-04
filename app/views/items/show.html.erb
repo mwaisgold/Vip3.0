@@ -189,6 +189,43 @@ function moveToTope(){window.scroll(0,0);}
 </div>
 
 <br/> <br/>
+<div id="boxgral">
+	<span class="tith2">Preferencias de pago y envío</span>
+
+	<div style="margin-left: 10px;">
+	<div class="titles2">Pago</div>
+		<% for paymentMethod in @paymentMethods %>
+			<div style="margin-left: 10px;">- <%= paymentMethod.name %>  <img src="<%= paymentMethod.logo %>"></div>
+		<% end %>
+	<div><br>
+	<table cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td>
+	<div id="boxmpmedios"> 
+	  <div id="mpOpen2"> 
+		<div id="mptoptitle"><a href="/jm/ml.faqs.portalFaqs.FaqsController?axn=verFaq&amp;faqId=3797&amp;categId=MP" target="_blank"><img src="/org-img/vip3/mpagotitle.gif" border="0"></a></div> 
+	  </div> 
+	<div class="mediosBox"><img src="/org-img/vip3/mcard/mcards_mla.gif"><img src="/org-img/vip3/mcard/med_ar_296x23.gif">
+
+	<div style="margin: 5px 0pt; color: rgb(18, 121, 40); font-size: 11px;">Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia.</div>
+
+		<div style="margin-top: 8px;"><img src="http://www.mercadolibre.com/org-img/vip3/ep/ppc17x17.gif" align="absmiddle" height="17" width="17"> <a target="_blank" href="http://www.mercadopago.com/argentina/ml/p_loadhtml?as_menu=M06S03&amp;as_html_code=PROTECCION_COMP02"> Tu compra está protegida</a> hasta $6.000<span class="decimales">00</span></div> 
+	  </div> 
+	</div>
+	</td></tr></tbody></table></div>
+	<br>
+	<div class="dashedgreyline"></div>
+
+	<div class="titles2">Envío</div>
+		<% for shipMethod in @shipMethods %>
+			<div style="margin-left: 10px;">- <%= shipMethod.description %></div>
+		<% end %>
+	<br>
+	<div></div>
+	</div>
+</div>
+
+<br/> <br/>
+
+
 <!-- preguntas -->
 
 <div id="tabsN">
@@ -226,6 +263,8 @@ function moveToTope(){window.scroll(0,0);}
 </div>  
 
 </div>
+
+
 
 <!--   -->
     <div name="attr_help" class="LayerAyuda"><div  id='MLID' class="caja_ayu_gral" onMouseOut="javascript:delayHide();" onMouseOver="javascript:deleteDelayHide();">
