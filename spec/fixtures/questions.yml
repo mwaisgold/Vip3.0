@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  item: 
+  question: MyText
+  question_dt: 2010-03-04
+  answer: MyText
+  answer_dt: 2010-03-04
+
+two:
+  item: 
+  question: MyText
+  question_dt: 2010-03-04
+  answer: MyText
+  answer_dt: 2010-03-04
+
+# == Schema Information
+#
+# Table name: questions
+#
+#  id          :integer(38)     not null, primary key
+#  question    :text
+#  question_dt :datetime
+#  answer      :text
+#  answer_dt   :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
