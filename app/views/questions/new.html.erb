@@ -1,0 +1,31 @@
+<h1>New question</h1>
+
+<% form_for(@question) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :item %><br />
+    <%= f.text_field :item %>
+  </p>
+  <p>
+    <%= f.label :question %><br />
+    <%= f.text_area :question %>
+  </p>
+  <p>
+    <%= f.label :question_dt %><br />
+    <%= f.date_select :question_dt %>
+  </p>
+  <p>
+    <%= f.label :answer %><br />
+    <%= f.text_area :answer %>
+  </p>
+  <p>
+    <%= f.label :answer_dt %><br />
+    <%= f.date_select :answer_dt %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', questions_path %>
