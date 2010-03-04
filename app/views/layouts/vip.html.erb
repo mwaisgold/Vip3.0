@@ -7,5 +7,5 @@
   </body>
   <%= render :partial => "common/footer" %>
   <br/><br/>
-  <center><%=t('app.render_time') % (Time.now - @stamp) %></center>
+  <center>Gen: <%=t('app.render_time') % ((Time.now - @stamp)*1000)   %></center>
 </html>

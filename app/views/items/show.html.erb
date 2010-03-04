@@ -247,7 +247,7 @@ function moveToTope(){window.scroll(0,0);}
 	<div class="wrap2"><a name="toQuest">        <div class="side"><b>Pregunta:</b><br>       </div>     
 	<div class="bloque"><%= question.question %></div>   </a>
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')">Denunciar</a></div></div>        
-	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%= question.question_dt%></span></div>     
+	<div class="wrap3">     <div class="side"><b>Respuesta:</b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
 	<div class="bloque"><%= question.answer %></div>     
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')">Denunciar</a></div>   </div> 
 	<% end %>
