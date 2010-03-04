@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304141926) do
+ActiveRecord::Schema.define(:version => 20100304144141) do
 
   create_table "customers", :force => true do |t|
     t.string   "nickname",   :limit => 20
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(:version => 20100304141926) do
     t.text     "description"
     t.integer  "price",       :precision => 38, :scale => 0
     t.integer  "bids_count",  :precision => 38, :scale => 0
-    t.integer  "cust_id",     :precision => 38, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id",     :precision => 38, :scale => 0, :null => false
