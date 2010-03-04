@@ -39,3 +39,8 @@ en:
 
   app:
     render_time: (%1.2f seg)
+
+  en:
+    date:
+      formats:
+        default: "%d-%m-%Y"
