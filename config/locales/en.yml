@@ -42,14 +42,6 @@ en:
   texto_cuotas: "Up to 12 payments with Hipotecario, Standard and Patagonia credit cards"
   hasta: until ${{valor}}
 
-  app:
-    render_time: %0.0f ms
-
-  date:
-    formats:
-      default: "%dd-%mm-%YYYY"
-      short: "%b %d"
-
   questions:
     questions_to_seller: "Questions to seller"
     buyer_rating: "Buyer ratings"
@@ -57,3 +49,18 @@ en:
     answer: "Answer"
     denounce: "Denounce"
     ask_a_seller: "Ask seller a question"
+
+
+  
+  app:
+    render_time: %0.0f ms
+
+  time:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%m/%d/%Y %H:%M"
+
+  date:
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%b %d"

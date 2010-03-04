@@ -38,15 +38,6 @@ es:
   texto_cuotas: "Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia"
   hasta: hasta ${{valor}}
 
-  app:
-    render_time: %0.0f ms
-
-  time:
-    pm: "pm"
-    formats:
-      default: "%dd-%mm-%YYYY"
-      short: "%b %d"
-
   questions:
     questions_to_seller: "Preguntas al vendedor"
     buyer_rating: "Calificaciones de compradores"
@@ -55,8 +46,18 @@ es:
     denounce: "Denunciar"
     ask_a_seller: "Hacer una pregunta al vendedor"
   
+  app:
+    render_time: %0.0f ms
+
+  time:
+    pm: "pm"
+    formats:
+      default: "%dd-%mm-%YYYY"
+      short: "%d/%m/%Y %H:%M"
+
   date:
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     month_names: [~, Enero,Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    
