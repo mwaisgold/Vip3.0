@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :questions
+
   map.resources :items
 
   map.resources :sites
