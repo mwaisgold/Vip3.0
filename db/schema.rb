@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304144141) do
+ActiveRecord::Schema.define(:version => 20100304154400) do
 
   create_table "customers", :force => true do |t|
     t.string   "nickname",   :limit => 20
@@ -37,11 +37,35 @@ ActiveRecord::Schema.define(:version => 20100304144141) do
   add_index "items", ["customer_id"], :name => "idx_items_customer"
   add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
 
+  create_table "items_payment_methods", :id => false, :force => true do |t|
+    t.integer "item_id",           :precision => 38, :scale => 0
+    t.integer "payment_method_id", :precision => 38, :scale => 0
+  end
+
+  create_table "items_ship_methods", :id => false, :force => true do |t|
+    t.integer "item_id",        :precision => 38, :scale => 0
+    t.integer "ship_method_id", :precision => 38, :scale => 0
+  end
+
+  create_table "payment_methods", :force => true do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", :force => true do |t|
+    t.integer  "item_id",     :precision => 38, :scale => 0
     t.text     "question"
     t.datetime "question_dt"
     t.text     "answer"
     t.datetime "answer_dt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ship_methods", :force => true do |t|
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,16 @@
+<h1>Editing ship_methods</h1>
+
+<% form_for(@ship_methods) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ship_methods %> |
+<%= link_to 'Back', ship_methods_path %>
