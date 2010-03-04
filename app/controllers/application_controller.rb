@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   before_filter :set_locale
   before_filter :take_stamp
-
+  after_filter  :set_charset
   def take_stamp
     @stamp = Time.new
   end
@@ -23,6 +23,13 @@ class ApplicationController < ActionController::Base
       Rails.cache.write(key, output)
     end
     return output
+  end
+
+  def set_charset
+    content_type = headers["Content-Type"] || 'text/html'
+    if /^text\//.match(content_type)
+      headers["Content-Type"] = "#{content_type}; charset=ISO-8859-1"
+    end
   end
 
 end
