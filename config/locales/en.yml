@@ -36,3 +36,6 @@ en:
   repdominicana: "Rep. Dominicana"
   uruguay: "Uruguay"
   venezuela: "Venezuela"
+
+  app:
+    render_time: (%1.2f seg)

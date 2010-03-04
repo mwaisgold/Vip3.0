@@ -7,18 +7,22 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   before_filter :set_locale
+  before_filter :take_stamp
 
+  def take_stamp
+    @stamp = Time.new
+  end
 
   def set_locale
     I18n.locale = params[:locale]
   end
 
-    def cache(key)
-      unless output = Rails.cache.read(key)
-        output = yield
-        Rails.cache.write(key, output)
-      end
-      return output
+  def cache(key)
+    unless output = Rails.cache.read(key)
+      output = yield
+      Rails.cache.write(key, output)
     end
+    return output
+  end
 
 end

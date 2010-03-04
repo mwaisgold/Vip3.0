@@ -6,4 +6,6 @@
     <%= yield %>
   </body>
   <%= render :partial => "common/footer" %>
+  <br/><br/>
+  <center><%=t('app.render_time') % (Time.now - @stamp) %></center>
 </html>
