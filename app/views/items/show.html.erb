@@ -100,16 +100,6 @@ function mostrarCalif(){
 	$("#Calificacionesdecompradores").show();
 }
 
-function mostrarFicha(){
-	$("#Fichatécnica").show();
-	$("#descriptionCont").hide();
-}
-
-function mostrarDescripcion(){
-	$("#Fichatécnica").hide();
-	$("#descriptionCont").show();
-}
-
 </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
@@ -208,34 +198,12 @@ function mostrarDescripcion(){
 <div id="tabsN">
 	<ul id="description">
 		<li group="description" class="TabbedPanelsTab" id="current">
-			<a href="javascript:mostrarDescripcion();cambiarEstilos('HDescripción',0,'description')"><span><%=t :descripcion %></span></a>
-		</li>
-		<li group="description" class="TabbedPanelsTab">
-			<a href="javascript:mostrarFicha();cambiarEstilos('HFichatécnica',0,'description')"><span>Ficha técnica</span></a>
-		</li><li group="description" class="TabbedPanelsTab" id="HOpinionesdelproducto">
-			<a href="javascript:showTab('Opinionesdelproducto','descriptionCont');cambiarEstilos('HOpinionesdelproducto',0,'description')"><span><img border="0" src="http://img.mlstatic.com/org-img/listados/new/rank45.gif"> 10 opiniones <!-- http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP --></span></a>
+			<a href="javascript:showTab('Descripción','descriptionCont');cambiarEstilos('HDescripción',0,'description')"><span><%=t :descripcion %></span></a>
 		</li>
 	</ul>
 </div>
 <div id="descriptionCont">
 	<div class="contentbox" id="Descripción"><%= @item.description %><!----></div>
-</div>
-<div align="center" class="contentbox" style="display: none;" id="Fichatécnica">
-	<div id="catalogTab">
-		<div id="fichasolapa">
-			<div class="fondonobg"><h2>Especificaciones</h2></div>
-			<div id="attr">
-				<% for attribute in @catalogProductAttrs do %>
-					<ul class="ul_simple">
-						<li class="li_simple"><b><%= attribute.key %>:</b></li>
-						<li class="li_simple_2"><%= attribute.value %></li>
-					</ul>
-				<% end %>
-			</div>
-			<div id="printspecs" class="printCatalog"><a href="javascript:print();">Imprimir ficha técnica</a></div>
-			<div class="Spacer"></div>
-		</div>
-	</div>
 </div>
 
 <br/> <br/>
@@ -413,6 +381,22 @@ function mostrarDescripcion(){
 </div>
 
 </div> 
+
+<div id="ItemsSellerFrame" style="clear: both;"><br><div class="roundboxFlex"><h2>Más publicaciones del vendedor</h2><div class="boxB"><table class="tableBox" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359"><img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=59216897_6166.jpg&amp;v=I" alt="Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359">Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009</a></span></div>
+<div class="pay"><span class="price2">U$S 435<span class="decimales">00</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77532695"><img src="http://img2.mlstatic.com/jm/img?s=MLA&amp;f=67199315_5348.jpg&amp;v=I" alt="Apple Macbook Pro Aluminium Mb990 E/a Snow Leopard Selladas" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77532695">Apple Macbook Pro Aluminium Mb990 E/a Snow Leopard Selladas</a></span></div>
+<div class="pay"><span class="price2">U$S 1.549<span class="decimales">95</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77199115"><img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=62020994_9786.jpg&amp;v=I" alt="Panasonic Lumix Dmc- Fz35 Leica 12.1 Mp Z.opt 18x Japonesas" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77199115">Panasonic Lumix Dmc- Fz35 Leica 12.1 Mp Z.opt 18x Japonesas</a></span></div>
+
+<div class="pay"><span class="price2">U$S 435<span class="decimales">00</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78934207"><img src="http://img2.mlstatic.com/jm/img?s=MLA&amp;f=61826546_3253.jpg&amp;v=I" alt="Apple Ipod Touch 3ra Generacion 64gb Juegos Wi-fi Bluetooth" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78934207">Apple Ipod Touch 3ra Generacion 64gb Juegos Wi-fi Bluetooth</a></span></div>
+<div class="pay"><span class="price2">U$S 459<span class="decimales">95</span></span></div></div></td></tr></tbody></table><div class="gotop"><a href="http://l
+
 
 </div>
 </center>
