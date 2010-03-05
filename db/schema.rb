@@ -9,7 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304175357) do
+ActiveRecord::Schema.define(:version => 20100305133442) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.integer  "category_id",  :precision => 38, :scale => 0
+    t.boolean  "accept_items", :precision => 1,  :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "nickname",   :limit => 20
@@ -32,8 +40,10 @@ ActiveRecord::Schema.define(:version => 20100304175357) do
     t.datetime "updated_at"
     t.integer  "site_id",     :precision => 38, :scale => 0, :null => false
     t.integer  "customer_id", :precision => 38, :scale => 0
+    t.integer  "category_id", :precision => 38, :scale => 0
   end
 
+  add_index "items", ["category_id"], :name => "idx_items_categ_id"
   add_index "items", ["customer_id"], :name => "idx_items_customer"
   add_index "items", ["site_id", "item_id"], :name => "idx_item_site", :unique => true
 

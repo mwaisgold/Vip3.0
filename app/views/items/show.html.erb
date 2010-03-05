@@ -34,7 +34,12 @@
     <div id="pathcateg"> 
       <div class="backlist"> <span id="listButton" style="position: relative; width: 250px; height: 20px;"></span> </div>
       <div class="breadcrumb">
-		<a class="path1" href="/org-img/html/MLA/1051.html">Celulares y Telefon&iacute;a</a><img src="/org-img/prod/arrow_categ.gif" border="0" height="10" width="13"><a class="path1" href="/jm/search?as_categ_id=3502">Accesorios para Celulares</a><img src="/org-img/prod/arrow_categ.gif" border="0" height="10" width="13"><a class="path1" href="/jm/search?as_categ_id=47540">Protectores de Pantalla</a><img src="/org-img/prod/arrow_categ.gif" border="0" height="10" width="13"><a class="path2" href="/jm/search?as_categ_id=70465">iPhone</a>
+		<% for category in @categories %>
+			<% if !category.category.nil? %>
+				<img src="/org-img/prod/arrow_categ.gif" border="0" height="10" width="13">
+			<% end %>
+			<a class="path1" href="/jm/search?as_categ_id=<%= category.id %>"><%= category.name %></a>			
+		<% end %>
 	</div>  
 	</div> 
 

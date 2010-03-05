@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @category.name %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @category.Category %>
+</p>
+
+<p>
+  <b>Accept items:</b>
+  <%=h @category.accept_items %>
+</p>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

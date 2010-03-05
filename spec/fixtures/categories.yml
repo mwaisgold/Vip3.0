@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  Category: 
+  accept_items: false
+
+two:
+  name: MyString
+  Category: 
+  accept_items: false
