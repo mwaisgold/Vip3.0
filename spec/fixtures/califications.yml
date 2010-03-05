@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customer: 
+  item: 
+  texto_calif: MyText
+  value_calif: 1
+  fecha: 2010-03-05
+
+two:
+  customer: 
+  item: 
+  texto_calif: MyText
+  value_calif: 1
+  fecha: 2010-03-05
+
+# == Schema Information
+#
+# Table name: califications
+#
+#  id          :integer(38)     not null, primary key
+#  customer_id :integer(38)
+#  item_id     :integer(38)
+#  texto_calif :text
+#  value_calif :integer(38)
+#  fecha       :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

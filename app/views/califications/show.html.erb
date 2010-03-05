@@ -1,0 +1,28 @@
+<p>
+  <b>Customer:</b>
+  <%=h @calification.customer %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%=h @calification.item %>
+</p>
+
+<p>
+  <b>Texto calif:</b>
+  <%=h @calification.texto_calif %>
+</p>
+
+<p>
+  <b>Value calif:</b>
+  <%=h @calification.value_calif %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%=h @calification.fecha %>
+</p>
+
+
+<%= link_to 'Edit', edit_calification_path(@calification) %> |
+<%= link_to 'Back', califications_path %>

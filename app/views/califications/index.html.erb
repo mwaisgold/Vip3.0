@@ -1,0 +1,28 @@
+<h1>Listing califications</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Item</th>
+    <th>Texto calif</th>
+    <th>Value calif</th>
+    <th>Fecha</th>
+  </tr>
+
+<% @califications.each do |calification| %>
+  <tr>
+    <td><%=h calification.customer %></td>
+    <td><%=h calification.item %></td>
+    <td><%=h calification.texto_calif %></td>
+    <td><%=h calification.value_calif %></td>
+    <td><%=h calification.fecha %></td>
+    <td><%= link_to 'Show', calification %></td>
+    <td><%= link_to 'Edit', edit_calification_path(calification) %></td>
+    <td><%= link_to 'Destroy', calification, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New calification', new_calification_path %>
