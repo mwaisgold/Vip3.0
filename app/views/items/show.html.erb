@@ -90,7 +90,20 @@ function preLoadMaxSize(){
 
 function moveToTope(){window.scroll(0,0);}
 
+function mostrarPreguntas(){
+	$("#Preguntasalvendedor").show();
+	$("#Calificacionesdecompradores").hide();
+}
+
+function mostrarCalif(){
+	$("#Preguntasalvendedor").hide();
+	$("#Calificacionesdecompradores").show();
+}
+
 </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
+
 <table align="center" class="photoframe">
 	<tr>
 		<td align="center" width="280" height="280" id="tdMainImg">
@@ -236,19 +249,23 @@ function moveToTope(){window.scroll(0,0);}
 <div id="tabsN">
 	<ul id="Community">
 		<li group="Community" class="TabbedPanelsTab" id="current">
-			<a href="javascript:showTab('Preguntasalvendedor','CommunityCont');cambiarEstilos('HPreguntasalvendedor',1,'Community')"><span><%=t 'questions.questions_to_seller' %></span></a>
+			<a href="javascript:mostrarPreguntas();cambiarEstilos('HPreguntasalvendedor',1,'Community')">
+				<span><%=t 'questions.questions_to_seller' %></span>
+			</a>
 		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
-			<a href="javascript:showTab('Calificacionesdecompradores','CommunityCont');cambiarEstilos('HCalificacionesdecompradores',1,'Community')"><span><%=t 'questions.buyer_rating'%></span></a>
+			<a href="javascript:mostrarCalif()"><span><%=t 'questions.buyer_califications'%></span></a>
 		</li>
+		
 	</ul>
 </div>
 
 
+<div id=CommunityCont>
 
-<div id="Preguntasalvendedor" class="contentbox">  <a name="toQuest">
+<div id="Preguntasalvendedor" class="contentbox">  <a name="toQuest"></a>
   <div style="text-align:right; width:99%"></div> 
   <% for question in @questions %>
-	</a><div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
+	<div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
 	<div class="wrap2"><a name="toQuest">        <div class="side"><b><%=t 'questions.question' %></b><br>       </div>     
 	<div class="bloque"><%= question.question %></div>   </a>
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')"><%=t 'questions.denounce' %></a></div></div>        
@@ -257,21 +274,49 @@ function moveToTope(){window.scroll(0,0);}
 	<div class="bloque"><%= question.answer %></div>     
 	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')"><%=t 'questions.denounce' %></a></div>   </div> 
 	</div>
+	</div>
 	<% end %>
-	
-
-
  <div class="askq-button"> 
   <table width="250" border="0" align="center"> 
     <tr> 
       <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="<%=t 'questions.ask_a_seller' %>" title="<%=t 'questions.ask_a_seller' %>" onclick="javascript:makeQues()" /></div></td> 
     </tr> 
   </table> 
-</div>  
+</div> 
 
 </div>
 
+<div id="Calificacionesdecompradores" style="display:none"class="contentbox">
+	<div id="historyBuyer">
+		<center>
+			<center>
+				<div class="titcals titles2">Calificaciones recibidas por la venta de este artículo.</div>
+				<div style="text-align: right;"></div>
+				<div class="wrap1">
+				<div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
 
+				<div class="bloque-cal">
+				<div class="tit_cal">
+				<div class="nickcal"><b>NANCYBMEN...(20)</b></div><div class="date-cal">01/03/2010</div>
+				</div>"Todo excelente!! Recomendable!! Gracias!!"</div>
+
+				<div class="separator2"></div><div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
+
+				<div class="bloque-cal">
+				<div class="tit_cal">
+				<div class="nickcal"><b>MBIAUS200...(3)</b></div><div class="date-cal">28/02/2010</div>
+				</div>"Por suerte todo salió muy bien . gracias!!!!!!!!!"</div>
+
+				<br>
+				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080">Ver todas las calificaciones</a></div>
+				</div>
+		</center>
+	</div>
+</div>
+
+
+
+</div>
 
 <!--   -->
     <div name="attr_help" class="LayerAyuda"><div  id='MLID' class="caja_ayu_gral" onMouseOut="javascript:delayHide();" onMouseOver="javascript:deleteDelayHide();">

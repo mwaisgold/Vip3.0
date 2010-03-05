@@ -40,7 +40,7 @@ es:
 
   questions:
     questions_to_seller: "Preguntas al vendedor"
-    buyer_rating: "Calificaciones de compradores"
+    buyer_califications: "Calificaciones de compradores"
     question: "Pregunta"
     answer: "Respuesta"
     denounce: "Denunciar"
