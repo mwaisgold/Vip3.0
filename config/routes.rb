@@ -1,6 +1,9 @@
 ActionController::Routing::Routes.draw do |map|
+<<<<<<< HEAD:config/routes.rb
   map.resources :califications
+  map.resources :catalog_product_attributes
 
+  map.resources :catalog_products
   map.resources :categories
 
   map.resources :ship_methods

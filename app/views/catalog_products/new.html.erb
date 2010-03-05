@@ -1,0 +1,15 @@
+<h1>New catalog_product</h1>
+
+<% form_for(@catalog_product) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', catalog_products_path %>

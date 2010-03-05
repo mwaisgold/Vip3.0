@@ -1,0 +1,24 @@
+<h1>Listing catalog_product_attributes</h1>
+
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Value</th>
+    <th>Catalog product</th>
+  </tr>
+
+<% @catalog_product_attributes.each do |catalog_product_attributes| %>
+  <tr>
+    <td><%=h catalog_product_attributes.key %></td>
+    <td><%=h catalog_product_attributes.value %></td>
+    <td><%=h catalog_product_attributes.catalog_product %></td>
+    <td><%= link_to 'Show', catalog_product_attributes %></td>
+    <td><%= link_to 'Edit', edit_catalog_product_attributes_path(catalog_product_attributes) %></td>
+    <td><%= link_to 'Destroy', catalog_product_attributes, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New catalog_product_attributes', new_catalog_product_attributes_path %>

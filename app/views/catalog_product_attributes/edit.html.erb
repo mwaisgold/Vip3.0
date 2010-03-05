@@ -1,0 +1,24 @@
+<h1>Editing catalog_product_attributes</h1>
+
+<% form_for(@catalog_product_attributes) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :key %><br />
+    <%= f.text_field :key %>
+  </p>
+  <p>
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.label :catalog_product %><br />
+    <%= f.text_field :catalog_product %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @catalog_product_attributes %> |
+<%= link_to 'Back', catalog_product_attributes_path %>

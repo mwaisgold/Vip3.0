@@ -1,0 +1,18 @@
+<p>
+  <b>Key:</b>
+  <%=h @catalog_product_attributes.key %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%=h @catalog_product_attributes.value %>
+</p>
+
+<p>
+  <b>Catalog product:</b>
+  <%=h @catalog_product_attributes.catalog_product %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_product_attributes_path(@catalog_product_attributes) %> |
+<%= link_to 'Back', catalog_product_attributes_path %>

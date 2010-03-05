@@ -1,0 +1,2 @@
+module CatalogProductsHelper
+end
