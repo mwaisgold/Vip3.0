@@ -1,0 +1,48 @@
+<p>
+  <b>Title:</b>
+  <%=h @review.title %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @review.points %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%=h @review.customer %>
+</p>
+
+<p>
+  <b>Catalog product:</b>
+  <%=h @review.catalog_product %>
+</p>
+
+<p>
+  <b>Pros:</b>
+  <%=h @review.pros %>
+</p>
+
+<p>
+  <b>Contras:</b>
+  <%=h @review.contras %>
+</p>
+
+<p>
+  <b>Conclusion:</b>
+  <%=h @review.conclusion %>
+</p>
+
+<p>
+  <b>Qty votes:</b>
+  <%=h @review.qty_votes %>
+</p>
+
+<p>
+  <b>Qty pos:</b>
+  <%=h @review.qty_pos %>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

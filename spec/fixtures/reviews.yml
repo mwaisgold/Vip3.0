@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  points: 1
+  customer: 
+  catalog_product: 
+  pros: MyText
+  contras: MyText
+  conclusion: MyText
+  qty_votes: 1
+  qty_pos: 1
+
+two:
+  title: MyString
+  points: 1
+  customer: 
+  catalog_product: 
+  pros: MyText
+  contras: MyText
+  conclusion: MyText
+  qty_votes: 1
+  qty_pos: 1

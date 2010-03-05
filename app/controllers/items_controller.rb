@@ -1,5 +1,3 @@
-require 'xml-object'
-
 class ItemsController < ApplicationController
   layout "vip", :only => :show
   
@@ -31,8 +29,11 @@ class ItemsController < ApplicationController
     end	
     
     @califications = @item.califications 	
-	
-    @catalogProductAttrs = @item.catalog_product.catalog_product_attributes
+	@product = @item.catalog_product
+	@product.calculate_reviews_summary
+	@catalogProductAttrs = @product.catalog_product_attributes
+	@reviews = @product.reviews
+
 	
     respond_to do |format|
       format.html # show.html.erb
