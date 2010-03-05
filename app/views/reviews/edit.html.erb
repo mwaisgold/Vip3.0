@@ -1,0 +1,48 @@
+<h1>Editing review</h1>
+
+<% form_for(@review) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :points %><br />
+    <%= f.text_field :points %>
+  </p>
+  <p>
+    <%= f.label :customer %><br />
+    <%= f.text_field :customer %>
+  </p>
+  <p>
+    <%= f.label :catalog_product %><br />
+    <%= f.text_field :catalog_product %>
+  </p>
+  <p>
+    <%= f.label :pros %><br />
+    <%= f.text_area :pros %>
+  </p>
+  <p>
+    <%= f.label :contras %><br />
+    <%= f.text_area :contras %>
+  </p>
+  <p>
+    <%= f.label :conclusion %><br />
+    <%= f.text_area :conclusion %>
+  </p>
+  <p>
+    <%= f.label :qty_votes %><br />
+    <%= f.text_field :qty_votes %>
+  </p>
+  <p>
+    <%= f.label :qty_pos %><br />
+    <%= f.text_field :qty_pos %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @review %> |
+<%= link_to 'Back', reviews_path %>

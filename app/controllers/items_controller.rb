@@ -33,7 +33,10 @@ class ItemsController < ApplicationController
 		category = category.category
 	end	
 	
-	@catalogProductAttrs = @item.catalog_product.catalog_product_attributes
+	@product = @item.catalog_product
+	@product.calculate_reviews_summary
+	@catalogProductAttrs = @product.catalog_product_attributes
+	@reviews = @product.reviews
 	
     respond_to do |format|
       format.html # show.html.erb

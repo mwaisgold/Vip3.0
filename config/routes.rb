@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :reviews
+
   map.resources :catalog_product_attributes
 
   map.resources :catalog_products

@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100305171617) do
+ActiveRecord::Schema.define(:version => 20100305185636) do
+
+  create_table "califications", :force => true do |t|
+    t.integer  "customer_id", :precision => 38, :scale => 0
+    t.integer  "item_id",     :precision => 38, :scale => 0
+    t.text     "texto_calif"
+    t.integer  "value_calif", :precision => 38, :scale => 0
+    t.datetime "fecha"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "catalog_product_attributes", :force => true do |t|
     t.string   "key"
@@ -90,6 +100,22 @@ ActiveRecord::Schema.define(:version => 20100305171617) do
   end
 
   add_index "questions", ["item_id"], :name => "idx_item_question"
+
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
+    t.integer  "points",             :precision => 38, :scale => 0
+    t.integer  "customer_id",        :precision => 38, :scale => 0
+    t.integer  "catalog_product_id", :precision => 38, :scale => 0
+    t.text     "pros"
+    t.text     "contras"
+    t.text     "conclusion"
+    t.integer  "qty_votes",          :precision => 38, :scale => 0
+    t.integer  "qty_pos",            :precision => 38, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["catalog_product_id"], :name => "idx_reviews_prod_id"
 
   create_table "ship_methods", :force => true do |t|
     t.string   "description"
