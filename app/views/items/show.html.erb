@@ -290,25 +290,33 @@ function mostrarCalif(){
 	<div id="historyBuyer">
 		<center>
 			<center>
-				<div class="titcals titles2">Calificaciones recibidas por la venta de este artículo.</div>
+				<div class="titcals titles2"><%=t 'califications.calif' %></div>
 				<div style="text-align: right;"></div>
+				
 				<div class="wrap1">
-				<div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
+				<% for calification in @califications %>
+				<div class="side-icon">
+					<% if calification.value_calif == 1 then %>
+						<img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == 0 then %>
+						<img src="/org-img/calif/neu_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == -1 then %>
+						<img src="/org-img/calif/neg_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+				</div>
 
 				<div class="bloque-cal">
 				<div class="tit_cal">
-				<div class="nickcal"><b>NANCYBMEN...(20)</b></div><div class="date-cal">01/03/2010</div>
-				</div>"Todo excelente!! Recomendable!! Gracias!!"</div>
+				<div class="nickcal"><b><%= calification.customer.nickname %> (<%= calification.customer.points %>)</b></div><div class="date-cal"><%=l calification.fecha, :format => :short %></div>
+				</div><%= calification.texto_calif %></div>
 
-				<div class="separator2"></div><div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
-
-				<div class="bloque-cal">
-				<div class="tit_cal">
-				<div class="nickcal"><b>MBIAUS200...(3)</b></div><div class="date-cal">28/02/2010</div>
-				</div>"Por suerte todo salió muy bien . gracias!!!!!!!!!"</div>
-
+				<div class="separator2"></div>
+				<% end %>
+				
 				<br>
-				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080">Ver todas las calificaciones</a></div>
+				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080"><%=t 'califications.view_all' %></a></div>
 				</div>
 		</center>
 	</div>

@@ -5,7 +5,8 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :payment_methods
   has_and_belongs_to_many :ship_methods
   belongs_to :category
-  
+  has_many :califications
+ 
   #Valido los campos que no pueden ser nulos
   validates_presence_of :site_id, :item_id, :title, :price, :bids_count
   #Valido la numericalidad del precio
@@ -46,20 +47,23 @@ class Item < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: items
 #
-#  id          :integer(38)     not null, primary key
-#  item_id     :integer(38)
-#  title       :string(255)
-#  image       :string(255)
-#  description :text
-#  price       :integer(38)
-#  bids_count  :integer(38)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  site_id     :integer(38)     not null
-#  customer_id :integer(38)
+#  id                 :integer(38)     not null, primary key
+#  item_id            :integer(38)
+#  title              :string(255)
+#  image              :string(255)
+#  description        :text
+#  price              :integer(38)
+#  bids_count         :integer(38)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  site_id            :integer(38)     not null
+#  customer_id        :integer(38)
+#  category_id        :integer(38)
+#  catalog_product_id :integer(38)
 #
 

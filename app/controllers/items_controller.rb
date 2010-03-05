@@ -18,21 +18,20 @@ class ItemsController < ApplicationController
   # GET /items/1.xml
   def show
     @item = Item.find(params[:id])
-#    @customer = XMLObject.new cache('customer' + @item.cust_id.to_s){
-#      @item.get_customer.raw_xml.to_s
-#    }
-	@customer = @item.customer
-	@questions = @item.questions
-	@shipMethods = @item.ship_methods
-	@paymentMethods = @item.payment_methods
-	
-	@categories = Array.new
-	category = @item.category
-	while (!category.nil?):
-		@categories.insert(0,category)
-		category = category.category
-	end	
-	
+    @customer = @item.customer
+    @questions = @item.questions
+    @shipMethods = @item.ship_methods
+    @paymentMethods = @item.payment_methods
+
+    @categories = Array.new
+    category = @item.category
+    while (!category.nil?):
+      @categories.insert(0,category)
+      category = category.category
+    end	
+    
+    @califications = @item.califications 	
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }

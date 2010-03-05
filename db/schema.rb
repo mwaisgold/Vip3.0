@@ -9,7 +9,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100305133442) do
+ActiveRecord::Schema.define(:version => 20100305183123) do
+
+  create_table "califications", :force => true do |t|
+    t.integer  "customer_id", :precision => 38, :scale => 0
+    t.integer  "item_id",     :precision => 38, :scale => 0
+    t.text     "texto_calif"
+    t.integer  "value_calif", :precision => 38, :scale => 0
+    t.datetime "fecha"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "catalog_product_attributes", :force => true do |t|
+    t.string   "key"
+    t.string   "value"
+    t.integer  "catalog_product_id", :precision => 38, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "catalog_products", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -30,17 +54,18 @@ ActiveRecord::Schema.define(:version => 20100305133442) do
   add_index "customers", ["nickname"], :name => "idx_cust_nickname", :unique => true
 
   create_table "items", :force => true do |t|
-    t.integer  "item_id",     :precision => 38, :scale => 0
+    t.integer  "item_id",            :precision => 38, :scale => 0
     t.string   "title"
     t.string   "image"
     t.text     "description"
-    t.integer  "price",       :precision => 38, :scale => 0
-    t.integer  "bids_count",  :precision => 38, :scale => 0
+    t.integer  "price",              :precision => 38, :scale => 0
+    t.integer  "bids_count",         :precision => 38, :scale => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "site_id",     :precision => 38, :scale => 0, :null => false
-    t.integer  "customer_id", :precision => 38, :scale => 0
-    t.integer  "category_id", :precision => 38, :scale => 0
+    t.integer  "site_id",            :precision => 38, :scale => 0, :null => false
+    t.integer  "customer_id",        :precision => 38, :scale => 0
+    t.integer  "category_id",        :precision => 38, :scale => 0
+    t.integer  "catalog_product_id", :precision => 38, :scale => 0
   end
 
   add_index "items", ["category_id"], :name => "idx_items_categ_id"
