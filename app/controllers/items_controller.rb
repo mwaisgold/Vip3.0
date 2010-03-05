@@ -33,6 +33,8 @@ class ItemsController < ApplicationController
 		category = category.category
 	end	
 	
+	@catalogProductAttrs = @item.catalog_product.catalog_product_attributes
+	
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @item }

@@ -5,6 +5,7 @@ class Item < ActiveRecord::Base
   has_and_belongs_to_many :payment_methods
   has_and_belongs_to_many :ship_methods
   belongs_to :category
+  belongs_to :catalog_product
   
   #Valido los campos que no pueden ser nulos
   validates_presence_of :site_id, :item_id, :title, :price, :bids_count
