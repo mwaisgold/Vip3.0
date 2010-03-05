@@ -117,7 +117,6 @@ function mostrarOpiniones(){
 	$("#descriptionCont").hide();
 	$("#reviewsTab").show();	
 }
-
 </script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js" type="text/javascript"></script>
@@ -220,8 +219,10 @@ function mostrarOpiniones(){
 		</li>
 		<li group="description" class="TabbedPanelsTab">
 			<a href="javascript:mostrarFicha();cambiarEstilos('HFichatécnica',0,'description')"><span>Ficha técnica</span></a>
-		</li><li group="description" class="TabbedPanelsTab" id="HOpinionesdelproducto">
+		</li>
+		<li group="description" class="TabbedPanelsTab" id="HOpinionesdelproducto">
 			<a href="javascript:mostrarOpiniones();cambiarEstilos('HOpinionesdelproducto',0,'description')"><span><img border="0" src="http://img.mlstatic.com/org-img/listados/new/rank45.gif"> 10 opiniones <!-- http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP --></span></a>
+			<a href="javascript:showTab('Descripción','descriptionCont');cambiarEstilos('HDescripción',0,'description')"><span><%=t :descripcion %></span></a>
 		</li>
 	</ul>
 </div>
@@ -355,7 +356,6 @@ function mostrarOpiniones(){
 </div>
 </div>
 
-
 <br/> <br/>
 <div id="boxgral">
 	<span class="tith2"><%=t :preferencia_pago %></span>
@@ -440,25 +440,33 @@ function mostrarOpiniones(){
 	<div id="historyBuyer">
 		<center>
 			<center>
-				<div class="titcals titles2">Calificaciones recibidas por la venta de este artículo.</div>
+				<div class="titcals titles2"><%=t 'califications.calif' %></div>
 				<div style="text-align: right;"></div>
+				
 				<div class="wrap1">
-				<div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
+				<% for calification in @califications %>
+				<div class="side-icon">
+					<% if calification.value_calif == 1 then %>
+						<img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == 0 then %>
+						<img src="/org-img/calif/neu_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == -1 then %>
+						<img src="/org-img/calif/neg_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+				</div>
 
 				<div class="bloque-cal">
 				<div class="tit_cal">
-				<div class="nickcal"><b>NANCYBMEN...(20)</b></div><div class="date-cal">01/03/2010</div>
-				</div>"Todo excelente!! Recomendable!! Gracias!!"</div>
+				<div class="nickcal"><b><%= calification.customer.nickname %> (<%= calification.customer.points %>)</b></div><div class="date-cal"><%=l calification.fecha, :format => :short %></div>
+				</div><%= calification.texto_calif %></div>
 
-				<div class="separator2"></div><div class="side-icon"><img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16"></div>
-
-				<div class="bloque-cal">
-				<div class="tit_cal">
-				<div class="nickcal"><b>MBIAUS200...(3)</b></div><div class="date-cal">28/02/2010</div>
-				</div>"Por suerte todo salió muy bien . gracias!!!!!!!!!"</div>
-
+				<div class="separator2"></div>
+				<% end %>
+				
 				<br>
-				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080">Ver todas las calificaciones</a></div>
+				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080"><%=t 'califications.view_all' %></a></div>
 				</div>
 		</center>
 	</div>
@@ -523,6 +531,22 @@ function mostrarOpiniones(){
 </div>
 
 </div> 
+
+<div id="ItemsSellerFrame" style="clear: both;"><br><div class="roundboxFlex"><h2>Más publicaciones del vendedor</h2><div class="boxB"><table class="tableBox" cellpadding="0" cellspacing="0"><tbody><tr><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359"><img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=59216897_6166.jpg&amp;v=I" alt="Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359">Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009</a></span></div>
+<div class="pay"><span class="price2">U$S 435<span class="decimales">00</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77532695"><img src="http://img2.mlstatic.com/jm/img?s=MLA&amp;f=67199315_5348.jpg&amp;v=I" alt="Apple Macbook Pro Aluminium Mb990 E/a Snow Leopard Selladas" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77532695">Apple Macbook Pro Aluminium Mb990 E/a Snow Leopard Selladas</a></span></div>
+<div class="pay"><span class="price2">U$S 1.549<span class="decimales">95</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77199115"><img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=62020994_9786.jpg&amp;v=I" alt="Panasonic Lumix Dmc- Fz35 Leica 12.1 Mp Z.opt 18x Japonesas" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=77199115">Panasonic Lumix Dmc- Fz35 Leica 12.1 Mp Z.opt 18x Japonesas</a></span></div>
+
+<div class="pay"><span class="price2">U$S 435<span class="decimales">00</span></span></div></div></td><td><div class="itemBox">
+<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78934207"><img src="http://img2.mlstatic.com/jm/img?s=MLA&amp;f=61826546_3253.jpg&amp;v=I" alt="Apple Ipod Touch 3ra Generacion 64gb Juegos Wi-fi Bluetooth" border="0" height="90" vspace="5" width="90"></a>
+<div class="titleArt"><span class="font11"><a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78934207">Apple Ipod Touch 3ra Generacion 64gb Juegos Wi-fi Bluetooth</a></span></div>
+<div class="pay"><span class="price2">U$S 459<span class="decimales">95</span></span></div></div></td></tr></tbody></table><div class="gotop"><a href="http://l
+
 
 </div>
 </center>

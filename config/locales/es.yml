@@ -45,7 +45,11 @@ es:
     answer: "Respuesta"
     denounce: "Denunciar"
     ask_a_seller: "Hacer una pregunta al vendedor"
-  
+
+  califications:
+    calif: "Calificaciones recibidas por la venta de este artículo."
+    view_all: "Ver todas las calificaciones"
+
   app:
     render_time: %0.0f ms
 
@@ -60,4 +64,3 @@ es:
     abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
     day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
     month_names: [~, Enero,Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
-    
