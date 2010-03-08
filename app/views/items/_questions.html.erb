@@ -1,0 +1,79 @@
+<div id="tabsN">
+	<ul id="Community">
+		<li group="Community" class="TabbedPanelsTab" id="current">
+			<a href="javascript:mostrarPreguntas();cambiarEstilos('HPreguntasalvendedor',1,'Community')">
+				<span><%=t 'questions.questions_to_seller' %></span>
+			</a>
+		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
+			<a href="javascript:mostrarCalif()"><span><%=t 'questions.buyer_califications'%></span></a>
+		</li>
+		
+	</ul>
+</div>
+
+
+<div id=CommunityCont>
+
+<div id="Preguntasalvendedor" class="contentbox">  <a name="toQuest"></a>
+  <div style="text-align:right; width:99%"></div> 
+  <% for question in @questions %>
+	<div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
+	<div class="wrap2"><a name="toQuest">        <div class="side"><b><%=t 'questions.question' %></b><br>       </div>     
+	<div class="bloque"><%= question.question %></div>   </a>
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')"><%=t 'questions.denounce' %></a></div></div>        
+	<div class="wrap3">     <div class="side"><b><%=t 'questions.answer' %></b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
+
+	<div class="bloque"><%= question.answer %></div>     
+	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')"><%=t 'questions.denounce' %></a></div>   </div> 
+	</div>
+	</div>
+	<% end %>
+ <div class="askq-button"> 
+  <table width="250" border="0" align="center"> 
+    <tr> 
+      <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="<%=t 'questions.ask_a_seller' %>" title="<%=t 'questions.ask_a_seller' %>" onclick="javascript:makeQues()" /></div></td> 
+    </tr> 
+  </table> 
+</div> 
+
+</div>
+
+<div id="Calificacionesdecompradores" style="display:none"class="contentbox">
+	<div id="historyBuyer">
+		<center>
+			<center>
+				<div class="titcals titles2"><%=t 'califications.calif' %></div>
+				<div style="text-align: right;"></div>
+				
+				<div class="wrap1">
+				<% for calification in @califications do %>
+				<div class="side-icon">
+					<% if calification.value_calif == 1 then %>
+						<img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == 0 then %>
+						<img src="/org-img/calif/neu_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+					<% if calification.value_calif == -1 then %>
+						<img src="/org-img/calif/neg_fb2.gif" align="absmiddle" height="16" width="16">
+					<% end %>
+				</div>
+
+				<div class="bloque-cal">
+				<div class="tit_cal">
+				<div class="nickcal"><b><%= calification.customer.nickname %> (<%= calification.customer.points %>)</b></div><div class="date-cal"><%=l calification.fecha, :format => :short %></div>
+				</div><%= calification.texto_calif %></div>
+
+				<div class="separator2"></div>
+				<% end %>
+				
+				<br>
+				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080"><%=t 'califications.view_all' %></a></div>
+				</div>
+		</center>
+	</div>
+</div>
+
+
+
+</div>

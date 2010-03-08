@@ -28,11 +28,13 @@ class ItemsController < ApplicationController
       category = category.category
     end	
     
-    @califications = @item.califications 	
+  @califications = @item.califications 	
 	@product = @item.catalog_product
 	@product.calculate_reviews_summary
 	@catalogProductAttrs = @product.catalog_product_attributes
 	@reviews = @product.reviews
+	
+	@items_seller = Item.all(:conditions => ["customer_id = ? and item_id <> ?", @customer.id, @item.item_id])
 
 	
     respond_to do |format|
