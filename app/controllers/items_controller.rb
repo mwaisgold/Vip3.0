@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @customer = @item.customer
-    @questions = @item.questions
+    @questions = @item.questions.all(:limit => 30)
     @shipMethods = @item.ship_methods
     @paymentMethods = @item.payment_methods
 
@@ -28,13 +28,13 @@ class ItemsController < ApplicationController
       category = category.category
     end	
     
-  @califications = @item.califications 	
-	@product = @item.catalog_product
-	@product.calculate_reviews_summary
-	@catalogProductAttrs = @product.catalog_product_attributes
-	@reviews = @product.reviews
+		@califications = @item.califications 	
+		@product = @item.catalog_product
+		@product.calculate_reviews_summary
+		@catalogProductAttrs = @product.catalog_product_attributes
+		@reviews = @product.reviews
 	
-	@items_seller = Item.all(:conditions => ["customer_id = ? and item_id <> ?", @customer.id, @item.item_id])
+		@items_seller = Item.all(:conditions => ["customer_id = ? and item_id <> ?", @customer.id, @item.item_id], :limit => 5)
 
 	
     respond_to do |format|
