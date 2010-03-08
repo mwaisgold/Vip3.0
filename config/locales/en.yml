@@ -41,33 +41,6 @@ en:
   texto_envio: "Shipping"
   texto_cuotas: "Up to 12 payments with Hipotecario, Standard and Patagonia credit cards"
   hasta: until ${{valor}}
-  
-  catalog:
-    product:
-      tab: "Tecnical specs"
-      title: "Specs"
-      print: "Print specs"
-    reviews:
-      tab:
-        one: "1 review"
-        other: '{{count}} reviews'
-      title: "Reviewes"
-      promedio: "Average"
-      resumen:
-        one: "over <b>1 review</b>"
-        other: 'over <b>{{count}} reviews</b>'
-      distribucion: "Points distribution"
-      puntaje: "Poings"
-      opiniones: "Reviews"
-      autor: "Author"
-      pros: "Pros"
-      contras: "Conts"
-      conclusion: "Conclusion"
-      util: "Was this review useful?"
-      resume:
-        one: "over 1 user <b>evaluated this review as useful</b>"
-        other: "over {{count}} users <b>evaluated this review as useful</b>"
-      denuncia: "Denounce review"
 
   questions:
     questions_to_seller: "Questions to seller"
@@ -97,3 +70,10 @@ en:
   items_seller:
     more_items: "More items from seller"
     view_more: "View more"
+
+  education:
+    learn: "Learn about MercadoLibre"
+    how_to_buy: "How to buy"
+    advices: "Advices for a succesful transaction"
+    why_ml: "Why MercadoLibre is safe"
+    how_pay: "How I pay my purchase"

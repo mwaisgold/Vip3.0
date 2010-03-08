@@ -218,10 +218,10 @@ function mostrarOpiniones(){
 			<a href="javascript:mostrarDescripcion();cambiarEstilos('HDescripción',0,'description')"><span><%=t :descripcion %></span></a>
 		</li>
 		<li group="description" class="TabbedPanelsTab">
-			<a href="javascript:mostrarFicha();cambiarEstilos('HFichatécnica',0,'description')"><span><%=t 'catalog.product.tab' %></span></a>
+			<a href="javascript:mostrarFicha();cambiarEstilos('HFichatécnica',0,'description')"><span>Ficha técnica</span></a>
 		</li>
 		<li group="description" class="TabbedPanelsTab" id="HOpinionesdelproducto">
-			<a href="javascript:mostrarOpiniones();cambiarEstilos('HOpinionesdelproducto',0,'description')"><span><img border="0" src="http://img.mlstatic.com/org-img/listados/new/rank<%= @product.get_balls_image_link %>.gif"> <%=t 'catalog.reviews.tab', :count => @reviews.length %> <!-- http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP --></span></a>
+			<a href="javascript:mostrarOpiniones();cambiarEstilos('HOpinionesdelproducto',0,'description')"><span><img border="0" src="http://img.mlstatic.com/org-img/listados/new/rank45.gif"> 10 opiniones <!-- http://opinion.mercadolibre.com.ar/ipod-touch-32-gb-tercera-generacion-584879-VCP --></span></a>
 		</li>
 	</ul>
 </div>
@@ -231,7 +231,7 @@ function mostrarOpiniones(){
 <div align="center" class="contentbox" style="display: none;" id="Fichatécnica">
 	<div id="catalogTab">
 		<div id="fichasolapa">
-			<div class="fondonobg"><h2><%=t 'catalog.product.title' %></h2></div>
+			<div class="fondonobg"><h2>Especificaciones</h2></div>
 			<div id="attr">
 				<% for attribute in @catalogProductAttrs do %>
 					<ul class="ul_simple">
@@ -240,25 +240,25 @@ function mostrarOpiniones(){
 					</ul>
 				<% end %>
 			</div>
-			<div id="printspecs" class="printCatalog"><a href="javascript:print();"><%=t 'catalog.product.print' %></a></div>
+			<div id="printspecs" class="printCatalog"><a href="javascript:print();">Imprimir ficha técnica</a></div>
 			<div class="Spacer"></div>
 		</div>
 	</div>
 </div>
 <div id="reviewsTab" class="contentbox" style="display: none;" >
 	<div id="solopis">
-		<div class="fondo"><h2><%=t 'catalog.reviews.title' %></h2></div>
+		<div class="fondo"><h2>Opiniones</h2></div>
 		<div id="attr" style="margin-top: 10px;"><!-- STARS -->
 			<div id="promedio">
-				<h3><%=t 'catalog.reviews.promedio' %></h3>
-				<span class="promedio"><img src="/org-img/reviews/<%= @product.get_balls_image_link %>BALLSON.gif" align="absbottom"><br><%=t 'catalog.reviews.resumen', :count => @reviews.length %></span>
+				<h3>Promedio</h3>
+				<span class="promedio"><img src="/org-img/reviews/<%= @product.get_balls_image_link %>BALLSON.gif" align="absbottom"><br>de <b><%= @reviews.length %> opiniones</b></span>
 			</div>
 
 			<div id="distribucion">
-				<h3><%=t 'catalog.reviews.distribucion' %></h3>
+				<h3>Distribución del puntaje</h3>
 		
-				<div class="marcadores"><%=t 'catalog.reviews.puntaje' %><br>
-					<div class="lblquant"><%=t 'catalog.reviews.opiniones' %></div>
+				<div class="marcadores">Puntaje<br>
+					<div class="lblquant">Opiniones</div>
 				</div>    
 		
 				<div class="colstar">
@@ -296,20 +296,20 @@ function mostrarOpiniones(){
 		<div class="contopinion"> 
 			<div class="titcalif"> 
 				<div class="opcalif"><img src="/org-img/reviews/4BALLSON.gif" align="absbottom"> | </div> 
-				<div style="" class="optitle"><%= review.title %></div> 
+				<div style="" class="optitle">El "casi iPhone" mejor que nunca!</div> 
 			</div> 
 			<div class="opbody"> 
-			<div class="opautor"> <span class="autor_rev_link"><%=t 'catalog.reviews.autor' %>: <b><%= review.customer.nickname %> (<%= review.customer.points %>) </b></span> </div> 
+			<div class="opautor"> <span class="autor_rev_link">Autor: <b><%= review.customer.nickname %> (<%= review.customer.points %>) </b></span> </div> 
 			<div class="proscons"> 
-				<div class="pros"><b><%=t 'catalog.reviews.pros' %>:</b><br>
+				<div class="pros"><b>Pros:</b><br>
 					<%= new_line_to_br review.pros %>
 				</div> 
-				<div class="contras"><b><%=t 'catalog.reviews.contras' %>:</b><br>
+				<div class="contras"><b>Contras:</b><br>
 					<%= new_line_to_br review.contras %>
 				</div> 
 			</div> 
 			<div class="opconcl"> 
-				<p><b><%=t 'catalog.reviews.conclusion' %>:</b><br>
+				<p><b>Conclusión:</b><br>
 					<%= new_line_to_br review.conclusion %>
 				</p> 
 			</div>     
@@ -320,7 +320,7 @@ function mostrarOpiniones(){
 				<div class="rbcontent">
                     <div class="opvote">
 						<div id="votacion405825" style="display: block;" class="votaciondiv">
-							<div class="votetxt"><%=t 'catalog.reviews.util' %></div>
+							<div class="votetxt">¿Te resultó útil esta opinión?</div>
 							<div class="btndiv">
 								<input name="si" onclick="javascript:voteReview('405825',true);" value="Sí" class="btnSI" type="button">
 							</div>
@@ -337,7 +337,7 @@ function mostrarOpiniones(){
 
 						<div id="error" style="display: none;"><!--##MSJ_ERROR##--></div>
 					</div>
-					<div class="oputil" id="votos405825"><b><%= review.qty_pos %></b> <%=t 'catalog.reviews.resume', :count => review.qty_votes %></div> 
+					<div class="oputil" id="votos405825"><b><%= review.qty_pos %></b> de <%= review.qty_votes %> usuarios <b>votaron como útil esta opinión.</b></div> 
 					<div id="footerReview405825" class="tks"></div> 
 				</div>
 				<div class="rbbot">
@@ -394,86 +394,8 @@ function mostrarOpiniones(){
 
 
 <!-- preguntas -->
+<%= render :partial => 'questions' %>
 
-<div id="tabsN">
-	<ul id="Community">
-		<li group="Community" class="TabbedPanelsTab" id="current">
-			<a href="javascript:mostrarPreguntas();cambiarEstilos('HPreguntasalvendedor',1,'Community')">
-				<span><%=t 'questions.questions_to_seller' %></span>
-			</a>
-		</li><li group="Community" class="TabbedPanelsTab" id="HCalificacionesdecompradores">
-			<a href="javascript:mostrarCalif()"><span><%=t 'questions.buyer_califications'%></span></a>
-		</li>
-		
-	</ul>
-</div>
-
-
-<div id=CommunityCont>
-
-<div id="Preguntasalvendedor" class="contentbox">  <a name="toQuest"></a>
-  <div style="text-align:right; width:99%"></div> 
-  <% for question in @questions %>
-	<div id="bigQues"><a name="toQuest"> </a><div class="wrap1" id="tableQues1"><a name="toQuest">     </a>
-	<div class="wrap2"><a name="toQuest">        <div class="side"><b><%=t 'questions.question' %></b><br>       </div>     
-	<div class="bloque"><%= question.question %></div>   </a>
-	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'QUES','Y')"><%=t 'questions.denounce' %></a></div></div>        
-	<div class="wrap3">     <div class="side"><b><%=t 'questions.answer' %></b><br>       <span class="font10"><%=l question.question_dt, :format => :short %></span></div>     
-
-	<div class="bloque"><%= question.answer %></div>     
-	<div class="denuncia2"><a class="font10" href="javascript:showDenunForm(864191029,'ANSW','Y')"><%=t 'questions.denounce' %></a></div>   </div> 
-	</div>
-	</div>
-	<% end %>
- <div class="askq-button"> 
-  <table width="250" border="0" align="center"> 
-    <tr> 
-      <td align="center"><div style="width:auto;overflow:hidden;"><input type="button" class="but_sec_2" value="<%=t 'questions.ask_a_seller' %>" title="<%=t 'questions.ask_a_seller' %>" onclick="javascript:makeQues()" /></div></td> 
-    </tr> 
-  </table> 
-</div> 
-
-</div>
-
-<div id="Calificacionesdecompradores" style="display:none"class="contentbox">
-	<div id="historyBuyer">
-		<center>
-			<center>
-				<div class="titcals titles2"><%=t 'califications.calif' %></div>
-				<div style="text-align: right;"></div>
-				
-				<div class="wrap1">
-				<% for calification in @califications do %>
-				<div class="side-icon">
-					<% if calification.value_calif == 1 then %>
-						<img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16">
-					<% end %>
-					<% if calification.value_calif == 0 then %>
-						<img src="/org-img/calif/neu_fb2.gif" align="absmiddle" height="16" width="16">
-					<% end %>
-					<% if calification.value_calif == -1 then %>
-						<img src="/org-img/calif/neg_fb2.gif" align="absmiddle" height="16" width="16">
-					<% end %>
-				</div>
-
-				<div class="bloque-cal">
-				<div class="tit_cal">
-				<div class="nickcal"><b><%= calification.customer.nickname %> (<%= calification.customer.points %>)</b></div><div class="date-cal"><%=l calification.fecha, :format => :short %></div>
-				</div><%= calification.texto_calif %></div>
-
-				<div class="separator2"></div>
-				<% end %>
-				
-				<br>
-				<div class="gotop" style="margin-right: 10px;"><a href="http://www.mercadolibre.com.ar/argentina/ml/org_profiles.p_detalle_nick?an_cust_id=84804080"><%=t 'califications.view_all' %></a></div>
-				</div>
-		</center>
-	</div>
-</div>
-
-
-
-</div>
 
 <!--   -->
     <div name="attr_help" class="LayerAyuda"><div  id='MLID' class="caja_ayu_gral" onMouseOut="javascript:delayHide();" onMouseOver="javascript:deleteDelayHide();">
@@ -532,20 +454,10 @@ function mostrarOpiniones(){
 </div> 
 
 <br/>
-<!-- BOX EDUCATION --> 
-<div class="learning2"> 
-<div style="margin: 4px 8px;"> <span class="tith2">Aprende sobre MercadoLibre</span></div>
 
-  <table style="margin-bottom: 6px; width: 97%;" align="center" border="0"><tbody><tr> 
-      <td>- <a href="/jm/ml.faqs.portalFaqs.FaqsController?axn=verFaq&amp;faqId=2400&amp;categId=BUY">Cómo Comprar</a><br> 
-       - <a href="p_loadhtml?as_menu=CSEG&amp;as_html_code=CSEG03">Consejos para una transacción exitosa</a></td> 
-      <td>- <a href="p_loadhtml?as_menu=M06S00&amp;as_html_code=MERCADOLIBRE_SEGURO">Por qué MercadoLibre es seguro</a><br> 
-       - <a href="/jm/ml.faqs.portalFaqs.FaqsController?axn=verFaq&amp;faqId=2403&amp;categId=AFBUY">Cómo pago mi compra</a><br></td> 
-    </tr> 
-  </tbody></table> 
-</div><br> 
-
-<br> 
+<!-- BOX EDUCATION -->
+<%= render :partial => 'education' %> 
+ 
 
 <!-- ART Vendedor --> 
 <div>
