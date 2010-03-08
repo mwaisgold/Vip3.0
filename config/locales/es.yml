@@ -38,6 +38,33 @@ es:
   texto_cuotas: "Hasta 12 cuotas sin interés con tarjetas del Hipotecario, Standard y Patagonia"
   hasta: hasta ${{valor}}
 
+  catalog:
+    product:
+      tab: "Ficha técnica"
+      title: "Especificaciones"
+      print: "Imprimir ficha t?cnica"
+    reviews:
+      tab:
+        one: "1 opinión"
+        other: '{{count}} opiniones'
+      title: "Opiniones"
+      promedio: "Promedio"
+      resumen:
+        one: "de <b>1 opinión</b>"
+        other: 'de <b>{{count}} opiniones</b>'
+      distribucion: "Distribuci?n del puntaje"
+      puntaje: "Puntaje"
+      opiniones: "Opiniones"
+      autor: "Autor"
+      pros: "Pros"
+      contras: "Contras"
+      conclusion: "Conclusión"
+      util: "?Te resultó útil esta opini?n?"
+      resume:
+        one: "de 1 usuario <b>votó como útil esta opinión</b>"
+        other: "de {{count}} usuarios <b>votaron como útil esta opinión</b>"
+      denuncia: "Denunciar opinión"
+  
   questions:
     questions_to_seller: "Preguntas al vendedor"
     buyer_califications: "Calificaciones de compradores"

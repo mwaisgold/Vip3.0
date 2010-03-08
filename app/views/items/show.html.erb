@@ -2,6 +2,73 @@
 	<%= @item.title %>
 <% end %>
 	
+	
+<style>
+div.float {
+  float: left; padding: 2px;
+ }
+.imageOver{
+	background:url(/org-img/vip3/visor/zoomB.gif) no-repeat 50% 50%;	
+	filter:alpha(opacity=80);
+	-moz-opacity: 0.8;
+	-khtml-opacity: 0.8;
+	opacity: 0.8;	
+}
+</style>
+<!--
+****************************************************************************************************************
+					VISOR HTML
+****************************************************************************************************************
+-->
+<script>
+var maxSize;
+var preImg;
+
+function setMaxWidth(){
+	preImg = new Image();
+	
+	preImg.onload = preLoadMaxSize;
+	preImg.src = srcMainImg;
+}
+
+function preLoadMaxSize(){
+	maxSize = preImg.width;
+	document.getElementById("mainImg").width = maxSize;
+}
+
+function moveToTope(){window.scroll(0,0);}
+
+function mostrarPreguntas(){
+	$("#Preguntasalvendedor").show();
+	$("#Calificacionesdecompradores").hide();
+}
+
+function mostrarCalif(){
+	$("#Preguntasalvendedor").hide();
+	$("#Calificacionesdecompradores").show();
+}
+
+function mostrarFicha(){
+	$("#Fichatécnica").show();
+	$("#descriptionCont").hide();
+	$("#reviewsTab").hide();	
+}
+
+function mostrarDescripcion(){
+	$("#Fichatécnica").hide();
+	$("#descriptionCont").show();
+	$("#reviewsTab").hide();	
+}
+
+function mostrarOpiniones(){
+	$("#Fichatécnica").hide();
+	$("#descriptionCont").hide();
+	$("#reviewsTab").show();	
+}
+</script>
+
+<script src="http://ec2-184-73-6-124.compute-1.amazonaws.com/javascripts/jquery.min.js" type="text/javascript"></script>
+	
 <%= render :partial => 'item_header' %>
 <div id="tabsN">
 	<ul id="description">
