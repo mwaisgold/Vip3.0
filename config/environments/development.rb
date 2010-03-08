@@ -18,3 +18,5 @@ config.action_mailer.raise_delivery_errors = false
 
 #Configuracion de memcached
 config.cache_store = :mem_cache_store, 'domU-12-31-39-0C-0A-07.compute-1.internal:11211','domU-12-31-39-0C-0A-07.compute-1.internal:11212', { :namespace => 'rails-vip' }
+
+ActionController::Base.asset_host = "ec2-184-73-6-124.compute-1.amazonaws.com"
