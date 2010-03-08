@@ -3,9 +3,14 @@
 <html>
   <%= render :partial => "common/header" %>
   <body>
-    <%= yield %>
-  </body>
-  <%= render :partial => "common/footer" %>
-  <br/><br/>
-  <center>gen: <%=t('app.render_time') % ((Time.now - @stamp)*1000)   %></center>
+	<center>
+		<div id="containall">
+			<%= render :partial => "common/ml_menu" %>
+			<%= yield %>
+			<%= render :partial => "common/footer" %>
+			<br/><br/>
+		</div>
+	</center>
+	<center>gen: <%=t('app.render_time') % ((Time.now - @stamp)*1000)   %></center>
+  </body>  
 </html>
