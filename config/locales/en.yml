@@ -66,3 +66,7 @@ en:
     formats:
       default: "%dd-%mm-%YYYY"
       short: "%b %d"
+
+  items_seller:
+    more_items: "More items from seller"
+    view_more: "View more"

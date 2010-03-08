@@ -443,7 +443,7 @@ function mostrarOpiniones(){
 				<div style="text-align: right;"></div>
 				
 				<div class="wrap1">
-				<% for calification in @califications %>
+				<% for calification in @califications do %>
 				<div class="side-icon">
 					<% if calification.value_calif == 1 then %>
 						<img src="/org-img/calif/pos_fb2.gif" align="absmiddle" height="16" width="16">
@@ -551,37 +551,39 @@ function mostrarOpiniones(){
 <div>
 	<div id="ItemsSellerFrame" style="clear: both;"><br>
 		<div class="roundboxFlex">
-			<h2>Más publicaciones del vendedor</h2>
+			<h2><%=t 'items_seller.more_items' %></h2>
 			<div class="boxB">
 				<table class="tableBox" cellpadding="0" cellspacing="0">
 					<tbody>
 						<tr>
 							
 							<!-- ciclar -->
+							<% for item_seller in @items_seller %>
 							<td>
 								<div class="itemBox">
 									<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359">
-										<img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=59216897_6166.jpg&amp;v=I" alt="Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009" border="0" height="90" vspace="5" width="90">
+										<img src="http://img1.mlstatic.com/jm/img?s=MLA&amp;f=<%= item_seller.image %>&amp;v=I" alt="<%= item_seller.title %>" border="0" height="90" vspace="5" width="90">
 									</a>
 									<div class="titleArt">
 										<span class="font11">
-											<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359">Filmadora Jvc Everio Gz-mg630 Disco Rigido 60gb Modelo 2009</a>
+											<a href="http://www.mercadolibre.com.ar/jm/item?site=MLA&amp;id=78857359"><%= item_seller.title %></a>
 										</span>
 									</div>
 									<div class="pay">
-										<span class="price2">U$S 435
+										<span class="price2">$ <%= item_seller.price %>
 											<span class="decimales">00</span>
 										</span>
 									</div>
 								</div>
 							</td>
+							<% end %>
 							<!-- hasta aca -->
 							
 						</tr>
 					</tbody>
 				</table>
 			
-				<div class="gotop"><a href="http://listado.mercadolibre.com.ar/_CustId_84804080" class="bl3n11">Ver más</a></div> 
+				<div class="gotop"><a href="http://listado.mercadolibre.com.ar/_CustId_84804080" class="bl3n11"><%=t 'items_seller.view_more' %></a></div> 
 			</div>
 		</div>
 		<div class="left-bot">
