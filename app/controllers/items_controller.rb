@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
     @categories = Array.new
     category = @item.category
-    while (!category.nil?):
+    while (!category.nil?)
       @categories.insert(0,category)
       category = category.category
     end	
